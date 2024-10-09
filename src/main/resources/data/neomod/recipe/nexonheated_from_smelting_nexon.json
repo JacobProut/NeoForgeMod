@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.3,
+  "group": "nexon",
+  "ingredient": {
+    "item": "neomod:nexon"
+  },
+  "result": {
+    "id": "neomod:nexonheated"
+  }
+}

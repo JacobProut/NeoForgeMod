@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "neomod:block/ghostly_grass_top"
-  }
-}

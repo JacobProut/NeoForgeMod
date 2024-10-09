@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "neomod:nexon_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "neomod:nexon"
+  }
+}

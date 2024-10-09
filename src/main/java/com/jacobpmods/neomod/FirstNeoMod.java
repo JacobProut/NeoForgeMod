@@ -4,7 +4,9 @@ import com.jacobpmods.block.ModBlocks;
 import com.jacobpmods.neomod.item.ModCreativeModeTabs;
 import com.jacobpmods.neomod.item.ModItems;
 import com.jacobpmods.neomod.item.custom.enchantment.ModEnchantmentEffects;
+import com.jacobpmods.neomod.item.custom.enchantment.ModEnchantments;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.ItemLike;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -72,6 +74,7 @@ public class FirstNeoMod {
             event.accept(ModItems.nexonhoe);
             event.accept(ModItems.nexonshovel);
             event.accept(ModItems.nexonsword);
+
         }
 
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
@@ -80,6 +83,8 @@ public class FirstNeoMod {
             event.accept(ModBlocks.GHOSTLY_GRASS_BLOCK);
             event.accept(ModBlocks.GHOSTLY_DIRT);
         }
+
+
 
     }
 

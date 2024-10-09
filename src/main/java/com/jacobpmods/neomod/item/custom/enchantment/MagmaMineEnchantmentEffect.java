@@ -1,5 +1,7 @@
 package com.jacobpmods.neomod.item.custom.enchantment;
 
+
+import com.jacobpmods.util.glm.Vector3;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -23,24 +25,21 @@ public record MagmaMineEnchantmentEffect(int level) implements EnchantmentEntity
 
     @Override
     public void apply(ServerLevel level, int enchantmentLevel, EnchantedItemInUse item, Entity entity, Vec3 origin) {
+        Vector3 vector = new Vector3(origin.x(), origin.y(), origin.z());
+
+        BlockPos blockPos = vector.toBlockPos();
+        BlockState blockState = level.getBlockState(blockPos);
+
+        // If the enchantment level is 1, replace the block with the air and drop the cooked variant of the ore
         if (enchantmentLevel == 1) {
-            BlockPos blockPos = new BlockPos((int) origin.x(), (int) origin.y(), (int) origin.z());
-            BlockState blockState = level.getBlockState(blockPos);
-
-            // Check if the block is iron ore
             if (blockState.is(Blocks.IRON_ORE)) {
-                // Destroy the original block without drops
-                level.destroyBlock(blockPos, false);
-
-                // Drop an iron ingot instead of the iron ore
-                Block.popResource(level, blockPos, new ItemStack(Items.IRON_INGOT));
+                level.setBlockAndUpdate(blockPos, Blocks.AIR.defaultBlockState()); // Remove the ore block
+                Block.popResource(level, blockPos, new ItemStack(Items.IRON_INGOT)); // Drop iron ingot
             } else if (blockState.is(Blocks.GOLD_ORE)) {
-                // Similar behavior for gold ore, if desired
-                level.destroyBlock(blockPos, false);
-
-                // Drop a gold ingot instead of the gold ore
-                Block.popResource(level, blockPos, new ItemStack(Items.GOLD_INGOT));
+                level.setBlockAndUpdate(blockPos, Blocks.AIR.defaultBlockState()); // Remove the ore block
+                Block.popResource(level, blockPos, new ItemStack(Items.GOLD_INGOT)); // Drop gold ingot
             }
+            // You can add more ores and their respective drops here
         }
     }
 

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "neomod:block/nexon_block"
+    }
+  }
+}

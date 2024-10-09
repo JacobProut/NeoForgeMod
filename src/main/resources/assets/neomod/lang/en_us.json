@@ -1,3 +1,9 @@
 {
-  "item.neomod.nexon": "nexon"
+  "item.neomod.nexon": "nexon",
+
+  "block.neomod.nexon_block": "Nexon Block",
+  "block.neomod.nexon_ore_block": "Nexon Ore Block",
+  "block.neomod.ghostly_grass_block": "Ghostly Grass",
+  "block.neomod.ghostly_grass_top": "Ghostly Grass top",
+  "block.neomod.ghostly_dirt": "Ghostly Dirt"
 }

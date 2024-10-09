@@ -1,5 +1,6 @@
 package com.jacobpmods.neomod;
 
+import com.jacobpmods.block.ModBlocks;
 import com.jacobpmods.neomod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
@@ -38,6 +39,7 @@ public class FirstNeoMod {
         NeoForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -55,6 +57,13 @@ public class FirstNeoMod {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.nexon);
+        }
+
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.NEXON_BLOCK);
+            event.accept(ModBlocks.NEXON_ORE_BLOCK);
+            event.accept(ModBlocks.GHOSTLY_GRASS_BLOCK);
+            event.accept(ModBlocks.GHOSTLY_DIRT);
         }
 
     }

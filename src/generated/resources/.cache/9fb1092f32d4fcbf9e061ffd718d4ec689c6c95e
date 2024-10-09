@@ -1,7 +1,17 @@
-// 1.21.1	2024-10-08T23:54:20.1622578	Recipes
+// 1.21.1	2024-10-09T14:36:05.4605421	Recipes
 6518f0e64c1c3f2cd06daa2a142160c9ae546ce0 data/neomod/advancement/recipes/misc/nexon.json
 a20d993a76e338ab1074c2af2096d6f7eba015c2 data/neomod/advancement/recipes/misc/nexonheated_from_blasting_nexon.json
 3bb5d6c3c7e28c87c6020eea9a0676c2e4e1744c data/neomod/advancement/recipes/misc/nexonheated_from_smelting_nexon.json
+157c9736b93e1f921ea1265740dc187db4c377da data/neomod/advancement/recipes/misc/nexoningot.json
+d6a70b411938568475b7b4b4b20c026a935e3e3b data/neomod/advancement/recipes/misc/nexonpickaxe.json
+a2cb6810137deb127fbc5c6644d064b106bc6e4f data/neomod/advancement/recipes/misc/nexonreinforcedingot.json
+1a5bbf20bc3466487597d1aa88f6952bd7c84cbb data/neomod/advancement/recipes/misc/nexon_block.json
+d0ab2442cabfa90ce0dc16a7a303d6043644cf75 data/neomod/advancement/recipes/misc/speedapple.json
 154fac8170696c79ed93c80768e30fc0bbb75bc7 data/neomod/recipe/nexon.json
 cc82c341ad5eae5ff79f3ece587ee690df2ff059 data/neomod/recipe/nexonheated_from_blasting_nexon.json
 626ccf879abb684b8d34b91ef1eb1dedc667a264 data/neomod/recipe/nexonheated_from_smelting_nexon.json
+555be7f973ee53ac66ec67e9651d996e7ef7f145 data/neomod/recipe/nexoningot.json
+8814493a03ae0db84eeee019a7d58cfc59d564c8 data/neomod/recipe/nexonpickaxe.json
+58d7b1b0e9668af817eb5b8074227b8def71c9b9 data/neomod/recipe/nexonreinforcedingot.json
+9ef110b7ffabbfd32647e5d51518c40c019ba5fc data/neomod/recipe/nexon_block.json
+97bf00598e0b1bf3281b3bd9ba68d2b9ade21b72 data/neomod/recipe/speedapple.json

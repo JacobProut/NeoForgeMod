@@ -3,6 +3,7 @@ package com.jacobpmods.neomod;
 import com.jacobpmods.block.ModBlocks;
 import com.jacobpmods.neomod.item.ModCreativeModeTabs;
 import com.jacobpmods.neomod.item.ModItems;
+import com.jacobpmods.neomod.item.custom.enchantment.ModEnchantmentEffects;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 
@@ -43,6 +44,9 @@ public class FirstNeoMod {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+
+        ModEnchantmentEffects.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);

@@ -20,7 +20,9 @@
   "block.neomod.nexon_ore_block": "Nexon Ore Block",
   "block.neomod.ghostly_grass_block": "Ghostly Grass",
   "block.neomod.ghostly_grass_top": "Ghostly Grass top",
-  "block.neomod.ghostly_dirt": "Ghostly Dirt"
+  "block.neomod.ghostly_dirt": "Ghostly Dirt",
+
+  "enchantment.neomod.magma_mine": "Magma Mine"
 
 
 }

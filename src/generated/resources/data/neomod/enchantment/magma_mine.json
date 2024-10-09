@@ -1,0 +1,32 @@
+{
+  "anvil_cost": 3,
+  "description": {
+    "translate": "enchantment.neomod.magma_mine"
+  },
+  "effects": {
+    "minecraft:hit_block": [
+      {
+        "effect": {
+          "type": "neomod:magma_mine",
+          "level": 1
+        }
+      }
+    ]
+  },
+  "exclusive_set": "#minecraft:exclusive_set/mining",
+  "max_cost": {
+    "base": 2,
+    "per_level_above_first": 8
+  },
+  "max_level": 1,
+  "min_cost": {
+    "base": 2,
+    "per_level_above_first": 4
+  },
+  "primary_items": "#minecraft:pickaxes",
+  "slots": [
+    "mainhand"
+  ],
+  "supported_items": "#minecraft:enchantable/weapon",
+  "weight": 5
+}

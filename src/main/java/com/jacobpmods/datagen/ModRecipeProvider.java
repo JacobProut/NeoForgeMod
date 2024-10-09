@@ -28,33 +28,33 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         oreSmelting(recipeOutput, NEXON_SMELTABLES, RecipeCategory.MISC, ModItems.heatednexon.get(), 0.30f, 200, "nexon");
         oreBlasting(recipeOutput, NEXON_SMELTABLES, RecipeCategory.MISC, ModItems.heatednexon.get(), 0.30f, 100, "nexon");
 
-        /*//Nexon Block Recipe
+        //Nexon Block Recipe
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.NEXON_BLOCK.get(), 1)
                 .pattern("AAA")
                 .pattern("AAA")
                 .pattern("AAA")
                 .define('A', ModItems.nexoningot.get())
-                .unlockedBy(getHasName(ModItems.nexoningot.get()), has(ModItems.nexoningot.get())).save(pRecipeOutput);*/
+                .unlockedBy(getHasName(ModItems.nexoningot.get()), has(ModItems.nexoningot.get())).save(recipeOutput);
 
         // 9 Nexon from Block Recipe
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.nexon.get(), 9)
                 .requires(ModBlocks.NEXON_BLOCK.get())
                 .unlockedBy(getHasName(ModBlocks.NEXON_BLOCK.get()), has(ModBlocks.NEXON_BLOCK.get())).save(recipeOutput);
 
-     /*
+
         //Nexon ingot Craft Recipe
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.nexoningot.get(), 1)
                 .pattern("HHH")
                 .pattern("HHH")
                 .pattern("HHH")
-                .define('H', ModItems.nexonheated.get())
-                .unlockedBy(getHasName(ModItems.nexoningot.get()), has(ModItems.nexoningot.get())).save(pRecipeOutput);
+                .define('H', ModItems.heatednexon.get())
+                .unlockedBy(getHasName(ModItems.nexoningot.get()), has(ModItems.nexoningot.get())).save(recipeOutput);
 
         //Nexon Reinforced Ingot Craft Recipe
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.nexonreinforcedingot.get(), 1)
                 .requires(ModItems.nexoningot.get(),1)
                 .requires(Items.NETHERITE_INGOT, 1)
-                .unlockedBy(getHasName(ModItems.nexoningot.get()), has(ModItems.nexoningot.get())).save(pRecipeOutput);
+                .unlockedBy(getHasName(ModItems.nexoningot.get()), has(ModItems.nexoningot.get())).save(recipeOutput);
 
         //Nexon Pickaxe Craft Recipe
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.nexonpickaxe.get(), 1)
@@ -63,7 +63,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern(" S ")
                 .define('A', ModItems.nexonreinforcedingot.get())
                 .define('S', Items.STICK)
-                .unlockedBy(getHasName(ModItems.nexonreinforcedingot.get()), has(ModItems.nexonreinforcedingot.get())).save(pRecipeOutput);
+                .unlockedBy(getHasName(ModItems.nexonreinforcedingot.get()), has(ModItems.nexonreinforcedingot.get())).save(recipeOutput);
 
         //Speed apple
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.speedapple.get(), 1)
@@ -72,7 +72,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("SSS")
                 .define('A', Items.APPLE)
                 .define('S', Items.SUGAR)
-                .unlockedBy(getHasName(Items.APPLE), has(Items.APPLE)).save(pRecipeOutput);*/
+                .unlockedBy(getHasName(Items.APPLE), has(Items.APPLE)).save(recipeOutput);
 
     }
     protected static void oreSmelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,

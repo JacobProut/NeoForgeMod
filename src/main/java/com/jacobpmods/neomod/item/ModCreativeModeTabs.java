@@ -17,11 +17,10 @@ public class ModCreativeModeTabs {
     public static final Supplier<CreativeModeTab> JACOBS_MODDED_ITEMS_TAB = CREATIVE_MODE_TABS.register("jacobs_modded_items_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.nexon.get()))
                     .title(Component.translatable("Jacobs Modded items")).displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.speedapple.get());
+                        output.accept(ModItems.fireball.get());
                         output.accept(ModItems.nexon.get());
                         output.accept(ModItems.heatednexon.get());
-                       /* output.accept(ModItems.speedapple.get());
-                        output.accept(ModItems.fireball.get());
-                        output.accept(ModItems.nexonheated.get());
                         output.accept(ModItems.nexoningot.get());
                         output.accept(ModItems.nexonreinforcedingot.get());
                         output.accept(ModBlocks.NEXON_BLOCK.get());
@@ -30,7 +29,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.nexonhoe.get());
                         output.accept(ModItems.nexonshovel.get());
                         output.accept(ModItems.nexonsword.get());
-                        output.accept(ModItems.nexonaxe.get());*/
+                        output.accept(ModItems.nexonaxe.get());
 
                         output.accept(ModBlocks.NEXON_BLOCK.get());
                         output.accept(ModBlocks.NEXON_ORE_BLOCK.get());

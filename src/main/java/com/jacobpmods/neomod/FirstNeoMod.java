@@ -61,6 +61,13 @@ public class FirstNeoMod {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.nexon);
             event.accept(ModItems.heatednexon);
+            event.accept(ModItems.nexoningot);
+            event.accept(ModItems.nexonreinforcedingot);
+            event.accept(ModItems.nexonaxe);
+            event.accept(ModItems.nexonpickaxe);
+            event.accept(ModItems.nexonhoe);
+            event.accept(ModItems.nexonshovel);
+            event.accept(ModItems.nexonsword);
         }
 
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {

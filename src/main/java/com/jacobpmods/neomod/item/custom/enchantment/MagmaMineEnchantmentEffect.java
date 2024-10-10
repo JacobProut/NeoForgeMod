@@ -1,5 +1,7 @@
 package com.jacobpmods.neomod.item.custom.enchantment;
 
+import com.jacobpmods.block.ModBlocks;
+import com.jacobpmods.neomod.item.ModItems;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -38,6 +40,9 @@ public record MagmaMineEnchantmentEffect(int level) implements EnchantmentEntity
             } else if (blockState.is(Blocks.GOLD_ORE)) {
                 level.setBlockAndUpdate(blockPos, Blocks.AIR.defaultBlockState()); // Remove the ore block
                 Block.popResource(level, blockPos, new ItemStack(Items.GOLD_INGOT)); // Drop gold ingot
+            } else if (blockState.is(ModBlocks.NEXON_ORE_BLOCK)) {
+                level.setBlockAndUpdate(blockPos, Blocks.AIR.defaultBlockState());
+                Block.popResource(level, blockPos, new ItemStack(ModItems.heatednexon.get()));
             }
             // You can add more ores and their respective drops here
 

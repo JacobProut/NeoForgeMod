@@ -1,6 +1,7 @@
 package com.jacobpmods.neomod.item;
 
 import com.jacobpmods.neomod.FirstNeoMod;
+import com.jacobpmods.neomod.item.custom.ModArmorItem;
 import com.jacobpmods.neomod.item.custom.food.speedapple;
 import com.jacobpmods.neomod.item.custom.tools.NexonAxe;
 import com.jacobpmods.neomod.item.custom.tools.NexonPickaxe;
@@ -43,13 +44,13 @@ public class ModItems {
                     .attributes(NexonAxe.createAttributes(ModToolTiers.NEXON,6, -3.2F))));
 
     public static final DeferredItem<Item> nexonhelmet = ITEMS.register("nexonhelmet",
-            () -> new ArmorItem(ModArmorMaterials.NEXON, ArmorItem.Type.HELMET, new Item.Properties().fireResistant().durability(ArmorItem.Type.HELMET.getDurability(42))));
+            () -> new ModArmorItem(ModArmorMaterials.NEXON, ArmorItem.Type.HELMET, new Item.Properties().fireResistant().durability(ArmorItem.Type.HELMET.getDurability(42))));
     public static final DeferredItem<Item> nexonchestplate = ITEMS.register("nexonchestplate",
-            () -> new ArmorItem(ModArmorMaterials.NEXON, ArmorItem.Type.CHESTPLATE, new Item.Properties().fireResistant().durability(ArmorItem.Type.CHESTPLATE.getDurability(42))));
+            () -> new ModArmorItem(ModArmorMaterials.NEXON, ArmorItem.Type.CHESTPLATE, new Item.Properties().fireResistant().durability(ArmorItem.Type.CHESTPLATE.getDurability(42))));
     public static final DeferredItem<Item> nexonleggings = ITEMS.register("nexonleggings",
-            () -> new ArmorItem(ModArmorMaterials.NEXON, ArmorItem.Type.LEGGINGS, new Item.Properties().fireResistant().durability(ArmorItem.Type.LEGGINGS.getDurability(42))));
+            () -> new ModArmorItem(ModArmorMaterials.NEXON, ArmorItem.Type.LEGGINGS, new Item.Properties().fireResistant().durability(ArmorItem.Type.LEGGINGS.getDurability(42))));
     public static final DeferredItem<Item> nexonboots = ITEMS.register("nexonboots",
-            () -> new ArmorItem(ModArmorMaterials.NEXON, ArmorItem.Type.BOOTS, new Item.Properties().fireResistant().durability(ArmorItem.Type.BOOTS.getDurability(42))));
+            () -> new ModArmorItem(ModArmorMaterials.NEXON, ArmorItem.Type.BOOTS, new Item.Properties().fireResistant().durability(ArmorItem.Type.BOOTS.getDurability(42))));
 
 
     public static void register(IEventBus eventBus) {

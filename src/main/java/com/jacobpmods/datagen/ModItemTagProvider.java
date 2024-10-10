@@ -21,9 +21,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         tag(ModTags.Items.TRANSFORMABLE_ITEMS);
-                /*.add(ModItems.nexon.get())
-                .add(ModItems.heatednexon.get())
-                .add(ModItems.nexoningot.get())
-                .add(ModItems.nexonreinforcedingot.get());*/
+                /*.add(ModItems.item.get())*/
+
     }
 }

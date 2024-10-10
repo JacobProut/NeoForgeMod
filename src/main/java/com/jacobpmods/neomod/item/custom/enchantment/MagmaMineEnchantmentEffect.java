@@ -1,11 +1,12 @@
 package com.jacobpmods.neomod.item.custom.enchantment;
 
 
-import com.jacobpmods.util.glm.Vector3;
+//import com.jacobpmods.util.glm.Vector3;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemStack;
@@ -25,9 +26,8 @@ public record MagmaMineEnchantmentEffect(int level) implements EnchantmentEntity
 
     @Override
     public void apply(ServerLevel level, int enchantmentLevel, EnchantedItemInUse item, Entity entity, Vec3 origin) {
-        Vector3 vector = new Vector3(origin.x(), origin.y(), origin.z());
 
-        BlockPos blockPos = vector.toBlockPos();
+        BlockPos blockPos = BlockPos.containing(origin);
         BlockState blockState = level.getBlockState(blockPos);
 
         // If the enchantment level is 1, replace the block with the air and drop the cooked variant of the ore
@@ -40,6 +40,9 @@ public record MagmaMineEnchantmentEffect(int level) implements EnchantmentEntity
                 Block.popResource(level, blockPos, new ItemStack(Items.GOLD_INGOT)); // Drop gold ingot
             }
             // You can add more ores and their respective drops here
+
+            level.sendParticles(ParticleTypes.LAVA, blockPos.getX() + 0.5, blockPos.getY() + 0.5, blockPos.getZ() + 0.5,
+                    10, 0.2, 0.2, 0.2, 0.02);
         }
     }
 

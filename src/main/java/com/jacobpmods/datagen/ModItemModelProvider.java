@@ -37,6 +37,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.nexonsword);
         handheldItem(ModItems.nexonaxe);
 
+        basicItem(ModItems.nexonhelmet.get());
+        basicItem(ModItems.nexonchestplate.get());
+        basicItem(ModItems.nexonleggings.get());
+        basicItem(ModItems.nexonboots.get());
+
+
     }
 
     private ItemModelBuilder handheldItem(DeferredItem<?> item) {

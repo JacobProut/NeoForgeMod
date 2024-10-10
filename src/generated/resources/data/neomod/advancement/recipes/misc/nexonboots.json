@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_nexonreinforcedingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "neomod:nexonreinforcedingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "neomod:nexonboots"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_nexonreinforcedingot"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "neomod:nexonboots"
+    ]
+  }
+}

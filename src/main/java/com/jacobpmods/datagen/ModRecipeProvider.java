@@ -65,6 +65,43 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', Items.STICK)
                 .unlockedBy(getHasName(ModItems.nexonreinforcedingot.get()), has(ModItems.nexonreinforcedingot.get())).save(recipeOutput);
 
+
+        //Nexon Helmet Craft Recipe
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.nexonhelmet.get(), 1)
+                .pattern("HRH")
+                .pattern("R R")
+                .pattern("   ")
+                .define('H', ModItems.heatednexon.get())
+                .define('R', ModItems.nexonreinforcedingot.get())
+                .unlockedBy(getHasName(ModItems.nexonreinforcedingot.get()), has(ModItems.nexonreinforcedingot.get())).save(recipeOutput);
+
+        //Nexon Chestplate Craft Recipe
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.nexonchestplate.get(), 1)
+                .pattern("R R")
+                .pattern("HRH")
+                .pattern("RHR")
+                .define('H', ModItems.heatednexon.get())
+                .define('R', ModItems.nexonreinforcedingot.get())
+                .unlockedBy(getHasName(ModItems.nexonreinforcedingot.get()), has(ModItems.nexonreinforcedingot.get())).save(recipeOutput);
+
+        //Nexon Leggings Craft Recipe
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.nexonleggings.get(), 1)
+                .pattern("RHR")
+                .pattern("H H")
+                .pattern("R R")
+                .define('H', ModItems.heatednexon.get())
+                .define('R', ModItems.nexonreinforcedingot.get())
+                .unlockedBy(getHasName(ModItems.nexonreinforcedingot.get()), has(ModItems.nexonreinforcedingot.get())).save(recipeOutput);
+
+        //Nexon Boots Craft Recipe
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.nexonboots.get(), 1)
+                .pattern("R R")
+                .pattern("H H")
+                .pattern("   ")
+                .define('H', ModItems.heatednexon.get())
+                .define('R', ModItems.nexonreinforcedingot.get())
+                .unlockedBy(getHasName(ModItems.nexonreinforcedingot.get()), has(ModItems.nexonreinforcedingot.get())).save(recipeOutput);
+
         //Speed apple
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.speedapple.get(), 1)
                 .pattern("SSS")

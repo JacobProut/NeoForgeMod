@@ -1,6 +1,7 @@
 package com.jacobpmods.neomod;
 
 import com.jacobpmods.block.ModBlocks;
+import com.jacobpmods.neomod.item.ModArmorMaterials;
 import com.jacobpmods.neomod.item.ModCreativeModeTabs;
 import com.jacobpmods.neomod.item.ModItems;
 import com.jacobpmods.neomod.item.custom.enchantment.ModEnchantmentEffects;
@@ -49,6 +50,7 @@ public class FirstNeoMod {
 
 
         ModEnchantmentEffects.register(modEventBus);
+        ModArmorMaterials.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);

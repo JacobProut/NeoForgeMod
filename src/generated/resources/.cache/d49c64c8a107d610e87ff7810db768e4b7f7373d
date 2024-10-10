@@ -1,3 +1,9 @@
-// 1.21.1	2024-10-10T03:23:48.4115386	Tags for minecraft:item mod id neomod
+// 1.21.1	2024-10-10T04:20:55.803451	Tags for minecraft:item mod id neomod
+36dcdedddc5bfb63bd5ae422ad572034886e9cb3 data/minecraft/tags/item/enchantable/armor.json
+cbfc5be5d17fa02940ad0def0a39af984d12377f data/minecraft/tags/item/enchantable/chest_armor.json
+36dcdedddc5bfb63bd5ae422ad572034886e9cb3 data/minecraft/tags/item/enchantable/durability.json
+50016ddb04fdd3f34ffec994ba10aa8e93378ec7 data/minecraft/tags/item/enchantable/foot_armor.json
+8c02f5a83feac86c3b03877dfa21c23e79679988 data/minecraft/tags/item/enchantable/head_armor.json
+30adf0d4e0d1944ac5c28456cd9c4b4d6af82c7e data/minecraft/tags/item/enchantable/leg_armor.json
 c3c15b75b3cfdb2ccc44d2653b0deacd820bd901 data/minecraft/tags/item/enchantable/mining.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/neomod/tags/item/transformable_items.json

@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
-import static net.minecraft.tags.ItemTags.MINING_ENCHANTABLE;
+import static net.minecraft.tags.ItemTags.*;
 
 public class ModItemTagProvider extends ItemTagsProvider {
 
@@ -27,6 +27,31 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
         tag(MINING_ENCHANTABLE)
                 .add(ModItems.nexonpickaxe.get());
+
+        tag(ARMOR_ENCHANTABLE)
+                .add(ModItems.nexonhelmet.get())
+                .add(ModItems.nexonchestplate.get())
+                .add(ModItems.nexonleggings.get())
+                .add(ModItems.nexonboots.get());
+
+        tag(DURABILITY_ENCHANTABLE)
+                .add(ModItems.nexonhelmet.get())
+                .add(ModItems.nexonchestplate.get())
+                .add(ModItems.nexonleggings.get())
+                .add(ModItems.nexonboots.get());
+
+
+        tag(HEAD_ARMOR_ENCHANTABLE)
+                .add(ModItems.nexonhelmet.get());
+
+        tag(CHEST_ARMOR_ENCHANTABLE)
+                .add(ModItems.nexonchestplate.get());
+
+        tag(LEG_ARMOR_ENCHANTABLE)
+                .add(ModItems.nexonleggings.get());
+
+        tag(FOOT_ARMOR_ENCHANTABLE)
+                .add(ModItems.nexonboots.get());
 
     }
 }

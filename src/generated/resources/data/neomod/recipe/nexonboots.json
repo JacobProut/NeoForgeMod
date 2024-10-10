@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "H": {
+      "item": "neomod:nexonheated"
+    },
+    "R": {
+      "item": "neomod:nexonreinforcedingot"
+    }
+  },
+  "pattern": [
+    "R R",
+    "H H",
+    "   "
+  ],
+  "result": {
+    "count": 1,
+    "id": "neomod:nexonboots"
+  }
+}

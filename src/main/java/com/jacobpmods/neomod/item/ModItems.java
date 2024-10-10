@@ -3,6 +3,7 @@ package com.jacobpmods.neomod.item;
 import com.jacobpmods.neomod.FirstNeoMod;
 import com.jacobpmods.neomod.item.custom.food.speedapple;
 import com.jacobpmods.neomod.item.custom.tools.NexonAxe;
+import com.jacobpmods.neomod.item.custom.tools.NexonPickaxe;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
@@ -22,25 +23,33 @@ public class ModItems {
     public static final DeferredItem<Item> nexonreinforcedingot = ITEMS.register("nexonreinforcedingot", () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> nexonpickaxe = ITEMS.register("nexonpickaxe",
-            () -> new PickaxeItem(ModToolTiers.NEXON, new Item.Properties()
-                    .attributes(PickaxeItem.createAttributes(ModToolTiers.NEXON,1.0F, -2.8F))));
+            () -> new NexonPickaxe(ModToolTiers.NEXON, new Item.Properties().fireResistant()
+                    .attributes(NexonPickaxe.createAttributes(ModToolTiers.NEXON,1.0F, -2.8F))));
 
     public static final DeferredItem<Item> nexonshovel = ITEMS.register("nexonshovel",
-            () -> new ShovelItem(ModToolTiers.NEXON, new Item.Properties()
+            () -> new ShovelItem(ModToolTiers.NEXON, new Item.Properties().fireResistant()
                     .attributes(ShovelItem.createAttributes(ModToolTiers.NEXON,1.5F, -3.0F))));
 
     public static final DeferredItem<Item> nexonhoe = ITEMS.register("nexonhoe",
-            () -> new HoeItem(ModToolTiers.NEXON, new Item.Properties()
+            () -> new HoeItem(ModToolTiers.NEXON, new Item.Properties().fireResistant()
                     .attributes(HoeItem.createAttributes(ModToolTiers.NEXON,0, -3.0F))));
 
     public static final DeferredItem<Item> nexonsword = ITEMS.register("nexonsword",
-            () -> new SwordItem(ModToolTiers.NEXON, new Item.Properties()
+            () -> new SwordItem(ModToolTiers.NEXON, new Item.Properties().fireResistant()
                     .attributes(SwordItem.createAttributes(ModToolTiers.NEXON,5, -2.4F))));
 
     public static final DeferredItem<Item> nexonaxe = ITEMS.register("nexonaxe",
-            () -> new NexonAxe(ModToolTiers.NEXON, new Item.Properties()
+            () -> new NexonAxe(ModToolTiers.NEXON, new Item.Properties().fireResistant()
                     .attributes(NexonAxe.createAttributes(ModToolTiers.NEXON,6, -3.2F))));
 
+    public static final DeferredItem<Item> nexonhelmet = ITEMS.register("nexonhelmet",
+            () -> new ArmorItem(ModArmorMaterials.NEXON, ArmorItem.Type.HELMET, new Item.Properties().fireResistant().durability(ArmorItem.Type.HELMET.getDurability(42))));
+    public static final DeferredItem<Item> nexonchestplate = ITEMS.register("nexonchestplate",
+            () -> new ArmorItem(ModArmorMaterials.NEXON, ArmorItem.Type.CHESTPLATE, new Item.Properties().fireResistant().durability(ArmorItem.Type.CHESTPLATE.getDurability(42))));
+    public static final DeferredItem<Item> nexonleggings = ITEMS.register("nexonleggings",
+            () -> new ArmorItem(ModArmorMaterials.NEXON, ArmorItem.Type.LEGGINGS, new Item.Properties().fireResistant().durability(ArmorItem.Type.LEGGINGS.getDurability(42))));
+    public static final DeferredItem<Item> nexonboots = ITEMS.register("nexonboots",
+            () -> new ArmorItem(ModArmorMaterials.NEXON, ArmorItem.Type.BOOTS, new Item.Properties().fireResistant().durability(ArmorItem.Type.BOOTS.getDurability(42))));
 
 
     public static void register(IEventBus eventBus) {

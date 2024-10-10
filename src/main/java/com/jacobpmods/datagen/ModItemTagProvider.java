@@ -12,6 +12,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
+import static net.minecraft.tags.ItemTags.MINING_ENCHANTABLE;
+
 public class ModItemTagProvider extends ItemTagsProvider {
 
     public ModItemTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> blockTags, @Nullable ExistingFileHelper existingFileHelper) {
@@ -22,6 +24,9 @@ public class ModItemTagProvider extends ItemTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         tag(ModTags.Items.TRANSFORMABLE_ITEMS);
                 /*.add(ModItems.item.get())*/
+
+        tag(MINING_ENCHANTABLE)
+                .add(ModItems.nexonpickaxe.get());
 
     }
 }

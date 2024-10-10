@@ -19,6 +19,8 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("Jacobs Modded items")).displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.speedapple.get());
                         output.accept(ModItems.fireball.get());
+
+                        //Nexon Items
                         output.accept(ModItems.nexon.get());
                         output.accept(ModItems.heatednexon.get());
                         output.accept(ModItems.nexoningot.get());
@@ -30,7 +32,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.nexonshovel.get());
                         output.accept(ModItems.nexonsword.get());
                         output.accept(ModItems.nexonaxe.get());
+                        output.accept(ModItems.nexonhelmet);
+                        output.accept(ModItems.nexonchestplate);
+                        output.accept(ModItems.nexonleggings);
+                        output.accept(ModItems.nexonboots);
 
+                        //Nexon Blocks
                         output.accept(ModBlocks.NEXON_BLOCK.get());
                         output.accept(ModBlocks.NEXON_ORE_BLOCK.get());
                         output.accept(ModBlocks.GHOSTLY_GRASS_BLOCK.get());

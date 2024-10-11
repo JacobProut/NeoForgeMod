@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_log_ghostly": {
+      "conditions": {
+        "items": [
+          {
+            "items": "neomod:log_ghostly"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "neomod:planks_ghostly"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_log_ghostly"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "neomod:planks_ghostly"
+    ]
+  }
+}

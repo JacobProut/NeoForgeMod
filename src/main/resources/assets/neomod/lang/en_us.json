@@ -27,6 +27,11 @@
   "block.neomod.ghostly_grass_block": "Ghostly Grass",
   "block.neomod.ghostly_grass_top": "Ghostly Grass top",
   "block.neomod.ghostly_dirt": "Ghostly Dirt",
+  "block.neomod.log_ghostly": "Ghostly Log",
+  "block.neomod.log_ghostly_top": "Ghostly Log Top",
+  "block.neomod.planks_ghostly": "Ghostly Planks",
+
+
 
   "enchantment.neomod.magma_mine": "Magma Mine"
 

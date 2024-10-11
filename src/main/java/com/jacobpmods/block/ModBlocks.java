@@ -29,6 +29,13 @@ public class ModBlocks {
     public static final DeferredBlock<Block> GHOSTLY_DIRT = registerBlock("ghostly_dirt",
             () -> new Block(BlockBehaviour.Properties.of().strength(1f).sound(SoundType.GRASS)));
 
+    public static final DeferredBlock<Block> LOG_GHOSTLY = registerBlock("log_ghostly", () ->new Block(BlockBehaviour.Properties.of()
+            .strength(2f).sound(SoundType.WOOD)));
+
+    public static final DeferredBlock<Block> PLANKS_GHOSTLY = registerBlock("planks_ghostly", () ->new Block(BlockBehaviour.Properties.of()
+            .strength(1f).sound(SoundType.WOOD)));
+
+
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

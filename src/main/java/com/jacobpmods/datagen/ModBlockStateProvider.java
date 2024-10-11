@@ -18,6 +18,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.NEXON_ORE_BLOCK);
         blockWithItem(ModBlocks.GHOSTLY_GRASS_BLOCK);
         blockWithItem(ModBlocks.GHOSTLY_DIRT);
+        blockWithItem(ModBlocks.LOG_GHOSTLY);
+        blockWithItem(ModBlocks.PLANKS_GHOSTLY);
     }
 
 

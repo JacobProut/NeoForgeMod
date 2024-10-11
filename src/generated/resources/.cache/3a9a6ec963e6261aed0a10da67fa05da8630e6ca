@@ -1,13 +1,19 @@
-// 1.21.1	2024-10-08T23:12:16.4567476	Block States: neomod
+// 1.21.1	2024-10-11T01:33:38.6699747	Block States: neomod
 8de1f0006f8c2e13875e1dbbfa8e1c8fa9849129 assets/neomod/blockstates/ghostly_dirt.json
 bc873194310b166f995eb341b1ff2b9bc5b0630d assets/neomod/blockstates/ghostly_grass_block.json
+7a56f497a4b668851121c55f1ec812a16c0331bf assets/neomod/blockstates/log_ghostly.json
 2f48aea5100ac63721989351687a92b91482877d assets/neomod/blockstates/nexon_block.json
 d34b5c989753a8bdac2e670369b909a0bb60eb02 assets/neomod/blockstates/nexon_ore_block.json
+f95ceec255f9672ca3ff59024e16075f454b5abe assets/neomod/blockstates/planks_ghostly.json
 51827f0f8328b6990bdbe46f0771fe69b7a3fe0b assets/neomod/models/block/ghostly_dirt.json
 31eeb8ff686ca4ef259a2519bab003cce6468924 assets/neomod/models/block/ghostly_grass_block.json
+088d54732a2bb32641cac36dc50313b377528176 assets/neomod/models/block/log_ghostly.json
 4d2a35e4ed5e10c2c7f058937492ebcbdbe8f05b assets/neomod/models/block/nexon_block.json
 16d87e0b2aaadd1a979075459257a99e23d58e3d assets/neomod/models/block/nexon_ore_block.json
+fbb05c9253b2f7b0bb5716f8da27133d503a3e6f assets/neomod/models/block/planks_ghostly.json
 201359fa2b3e2ce60b2e834891a919d2cff9991c assets/neomod/models/item/ghostly_dirt.json
 30e23e8fb71f56bac27b1b2d09a496377b8e19d5 assets/neomod/models/item/ghostly_grass_block.json
+de346f72c3a40f08bf60aa1fc62bc773700fd1ab assets/neomod/models/item/log_ghostly.json
 5a620e3140ab1965f348d9a6703f07f68d776919 assets/neomod/models/item/nexon_block.json
 3cb77f56b248e0d19b417c3cf9d8dec5239c5612 assets/neomod/models/item/nexon_ore_block.json
+91e5ccf036b6528df1c06f8e426a6a13f2a59c4b assets/neomod/models/item/planks_ghostly.json

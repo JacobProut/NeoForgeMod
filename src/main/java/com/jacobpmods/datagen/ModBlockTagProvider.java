@@ -29,6 +29,10 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.NEXON_BLOCK.get())
                 .add(ModBlocks.NEXON_ORE_BLOCK.get());
 
+        tag(MINEABLE_WITH_AXE)
+                .add(ModBlocks.LOG_GHOSTLY.get())
+                .add(ModBlocks.PLANKS_GHOSTLY.get());
+
         tag(NEEDS_NEXON_TOOL)
                 .add(ModBlocks.NEXON_ORE_BLOCK.get())
                 .add(ModBlocks.NEXON_BLOCK.get())

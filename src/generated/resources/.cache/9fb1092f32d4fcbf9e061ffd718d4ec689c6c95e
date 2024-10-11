@@ -1,4 +1,4 @@
-// 1.21.1	2024-10-10T04:32:22.7758884	Recipes
+// 1.21.1	2024-10-11T01:42:00.1744027	Recipes
 6518f0e64c1c3f2cd06daa2a142160c9ae546ce0 data/neomod/advancement/recipes/misc/nexon.json
 d0a6a65c6e485618a44dfcbb361df24f97701e58 data/neomod/advancement/recipes/misc/nexonboots.json
 63367fe2846e31ce3ecfff5337550ca200ce33ff data/neomod/advancement/recipes/misc/nexonchestplate.json
@@ -10,6 +10,7 @@ d451773be98aed01fce7ff55c2bafebab7e6db90 data/neomod/advancement/recipes/misc/ne
 d6a70b411938568475b7b4b4b20c026a935e3e3b data/neomod/advancement/recipes/misc/nexonpickaxe.json
 a2cb6810137deb127fbc5c6644d064b106bc6e4f data/neomod/advancement/recipes/misc/nexonreinforcedingot.json
 1a5bbf20bc3466487597d1aa88f6952bd7c84cbb data/neomod/advancement/recipes/misc/nexon_block.json
+b451da62cfc1aed5b5ac66ee3a15de709127cb8c data/neomod/advancement/recipes/misc/planks_ghostly.json
 d0ab2442cabfa90ce0dc16a7a303d6043644cf75 data/neomod/advancement/recipes/misc/speedapple.json
 154fac8170696c79ed93c80768e30fc0bbb75bc7 data/neomod/recipe/nexon.json
 9eabc0d16e80963aec94e0f9f82f06383e64ec33 data/neomod/recipe/nexonboots.json
@@ -22,4 +23,5 @@ cc82c341ad5eae5ff79f3ece587ee690df2ff059 data/neomod/recipe/nexonheated_from_bla
 8814493a03ae0db84eeee019a7d58cfc59d564c8 data/neomod/recipe/nexonpickaxe.json
 58d7b1b0e9668af817eb5b8074227b8def71c9b9 data/neomod/recipe/nexonreinforcedingot.json
 9ef110b7ffabbfd32647e5d51518c40c019ba5fc data/neomod/recipe/nexon_block.json
+0197c4032c23b49edff9c44928683bcc3c9a8605 data/neomod/recipe/planks_ghostly.json
 97bf00598e0b1bf3281b3bd9ba68d2b9ade21b72 data/neomod/recipe/speedapple.json

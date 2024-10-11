@@ -43,8 +43,12 @@ public class ModCreativeModeTabs {
                         //Nexon Blocks
                         output.accept(ModBlocks.NEXON_BLOCK.get());
                         output.accept(ModBlocks.NEXON_ORE_BLOCK.get());
+
+                        //Ghostly Blocks
                         output.accept(ModBlocks.GHOSTLY_GRASS_BLOCK.get());
                         output.accept(ModBlocks.GHOSTLY_DIRT.get());
+                        output.accept(ModBlocks.LOG_GHOSTLY.get());
+                        output.accept(ModBlocks.PLANKS_GHOSTLY.get());
 
 
                         //Find a way to add magma mine book

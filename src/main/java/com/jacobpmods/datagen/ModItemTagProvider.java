@@ -25,6 +25,12 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(ModTags.Items.TRANSFORMABLE_ITEMS);
                 /*.add(ModItems.item.get())*/
 
+        tag(SWORDS)
+                .add(ModItems.nexonsword.get());
+
+        tag(SWORD_ENCHANTABLE)
+                .add(ModItems.nexonsword.get());
+
         tag(MINING_ENCHANTABLE)
                 .add(ModItems.nexonpickaxe.get());
 
@@ -34,11 +40,17 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.nexonleggings.get())
                 .add(ModItems.nexonboots.get());
 
+        //Unbreaking 3 Enchantment
         tag(DURABILITY_ENCHANTABLE)
                 .add(ModItems.nexonhelmet.get())
                 .add(ModItems.nexonchestplate.get())
                 .add(ModItems.nexonleggings.get())
-                .add(ModItems.nexonboots.get());
+                .add(ModItems.nexonboots.get())
+                .add(ModItems.nexonsword.get())
+                .add(ModItems.nexonaxe.get())
+                .add(ModItems.nexonhoe.get())
+                .add(ModItems.nexonshovel.get());
+
 
         tag(HEAD_ARMOR_ENCHANTABLE)
                 .add(ModItems.nexonhelmet.get());

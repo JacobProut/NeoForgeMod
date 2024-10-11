@@ -40,7 +40,6 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.nexonleggings.get())
                 .add(ModItems.nexonboots.get());
 
-
         tag(HEAD_ARMOR_ENCHANTABLE)
                 .add(ModItems.nexonhelmet.get());
 
@@ -51,6 +50,12 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.nexonleggings.get());
 
         tag(FOOT_ARMOR_ENCHANTABLE)
+                .add(ModItems.nexonboots.get());
+
+        this.tag(TRIMMABLE_ARMOR)
+                .add(ModItems.nexonhelmet.get())
+                .add(ModItems.nexonchestplate.get())
+                .add(ModItems.nexonleggings.get())
                 .add(ModItems.nexonboots.get());
 
     }

@@ -1,9 +1,5 @@
 package com.jacobpmods.neomod.item.custom;
 
-import net.minecraft.core.Holder;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArmorMaterial;
-
 import com.google.common.collect.ImmutableMap;
 import com.jacobpmods.neomod.item.ModArmorMaterials;
 import net.minecraft.core.Holder;

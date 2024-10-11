@@ -2,6 +2,8 @@ package com.jacobpmods.block;
 
 import com.jacobpmods.neomod.FirstNeoMod;
 import com.jacobpmods.neomod.item.ModItems;
+import com.jacobpmods.neomod.item.custom.block.GhostlyBlock;
+import com.jacobpmods.neomod.item.custom.block.GhostlyDirtBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -24,10 +26,10 @@ public class ModBlocks {
             .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST_CLUSTER)));
 
     public static final DeferredBlock<Block> GHOSTLY_GRASS_BLOCK = registerBlock("ghostly_grass_block",
-            () -> new Block(BlockBehaviour.Properties.of().strength(1f).sound(SoundType.GRASS)));
+            GhostlyBlock::new);
 
     public static final DeferredBlock<Block> GHOSTLY_DIRT = registerBlock("ghostly_dirt",
-            () -> new Block(BlockBehaviour.Properties.of().strength(1f).sound(SoundType.GRASS)));
+            GhostlyDirtBlock::new);
 
     public static final DeferredBlock<Block> LOG_GHOSTLY = registerBlock("log_ghostly", () ->new Block(BlockBehaviour.Properties.of()
             .strength(2f).sound(SoundType.WOOD)));

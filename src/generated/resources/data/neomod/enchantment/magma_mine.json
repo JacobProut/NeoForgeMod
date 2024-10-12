@@ -27,8 +27,6 @@
   "slots": [
     "mainhand"
   ],
-  "supported_items": [
-    "neomod:nexonpickaxe"
-    ],
+  "supported_items": "#minecraft:enchantable/mining",
   "weight": 5
 }

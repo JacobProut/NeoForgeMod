@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "neomod:block/log_ghostly",
+    "side": "neomod:block/log_ghostly"
+  }
+}

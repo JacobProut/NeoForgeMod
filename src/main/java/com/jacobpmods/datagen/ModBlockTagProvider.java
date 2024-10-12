@@ -63,5 +63,13 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         tag(DIRT)
                 .add(ModBlocks.GHOSTLY_DIRT.get());
+
+        this.tag(LOGS_THAT_BURN)
+                .add(ModBlocks.LOG_GHOSTLY.get())
+                .add(ModBlocks.WOOD_GHOSTLY.get())
+                .add(ModBlocks.STRIPPED_GHOSTLY_LOG.get())
+                .add(ModBlocks.STRIPPED_GHOSTLY_WOOD.get());
+
+
     }
 }

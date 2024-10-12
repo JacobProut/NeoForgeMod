@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "down": "neomod:block/stripped_ghostly_log",
+    "up": "neomod:block/stripped_ghostly_log",
+    "north": "neomod:block/stripped_ghostly_log_top",
+    "south": "neomod:block/stripped_ghostly_log_top",
+    "west": "neomod:block/stripped_ghostly_log",
+    "east": "neomod:block/stripped_ghostly_log"
+  }
+}

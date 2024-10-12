@@ -1,6 +1,7 @@
 package com.jacobpmods.datagen;
 
 import com.jacobpmods.neomod.FirstNeoMod;
+import com.mojang.logging.LogUtils;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
@@ -20,26 +21,29 @@ public class DataGenerator {
 
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
+        LogUtils.getLogger().debug("GATHER_DATA: Starting data generation");
         net.minecraft.data.DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-        generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(),
-                List.of(new LootTableProvider.SubProviderEntry(ModBlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
-        generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput, lookupProvider));
-
+        LogUtils.getLogger().debug("GATHER_DATA: Adding providers");
         BlockTagsProvider blockTagsProvider = new ModBlockTagProvider(packOutput, lookupProvider, existingFileHelper);
         generator.addProvider(event.includeServer(), blockTagsProvider);
+        generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(), List.of(new LootTableProvider.SubProviderEntry(ModBlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
+        generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput, lookupProvider));
         generator.addProvider(event.includeServer(), new ModItemTagProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
-
         generator.addProvider(event.includeServer(), new ModDataMapProvider(packOutput, lookupProvider));
+
+        //These two coinside and have issues
+        /*generator.addProvider(event.includeServer(), new ModDataRegistryProvider(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookupProvider));*/
+        generator.addProvider(event.includeServer(), new CombinedDataProvider(packOutput, lookupProvider));
 
 
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
-
-        generator.addProvider(event.includeServer(), new ModDataRegistryProvider(packOutput, lookupProvider));
+        LogUtils.getLogger().debug("End of DataGenerator.gatherData");
     }
 }
 

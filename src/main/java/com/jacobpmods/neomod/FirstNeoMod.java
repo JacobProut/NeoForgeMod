@@ -86,6 +86,8 @@ public class FirstNeoMod {
             event.accept(ModBlocks.GHOSTLY_DIRT);
             event.accept(ModBlocks.LOG_GHOSTLY);
             event.accept(ModBlocks.PLANKS_GHOSTLY);
+            event.accept(ModBlocks.GHOSTLY_LEAVES);
+            event.accept(ModBlocks.GHOSTLY_SAPLING);
         }
 
 

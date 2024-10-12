@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "down": "neomod:block/log_ghostly",
+    "up": "neomod:block/log_ghostly",
+    "north": "neomod:block/log_ghostly_top",
+    "south": "neomod:block/log_ghostly_top",
+    "west": "neomod:block/log_ghostly",
+    "east": "neomod:block/log_ghostly"
+  }
+}
+

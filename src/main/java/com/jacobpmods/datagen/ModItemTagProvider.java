@@ -1,11 +1,13 @@
 package com.jacobpmods.datagen;
 
+import com.jacobpmods.block.ModBlocks;
 import com.jacobpmods.neomod.FirstNeoMod;
 import com.jacobpmods.neomod.item.ModItems;
 import com.jacobpmods.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -24,6 +26,16 @@ public class ModItemTagProvider extends ItemTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         tag(ModTags.Items.TRANSFORMABLE_ITEMS);
                 /*.add(ModItems.item.get())*/
+
+        tag(LOGS_THAT_BURN)
+                .add(ModBlocks.LOG_GHOSTLY.get().asItem())
+                .add(ModBlocks.WOOD_GHOSTLY.get().asItem())
+                .add(ModBlocks.STRIPPED_GHOSTLY_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_GHOSTLY_WOOD.get().asItem());
+
+        tag(PLANKS)
+                .add(ModBlocks.PLANKS_GHOSTLY.get().asItem());
+
 
         tag(SWORDS)
                 .add(ModItems.nexonsword.get());

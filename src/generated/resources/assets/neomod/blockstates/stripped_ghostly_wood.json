@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "neomod:block/stripped_ghostly_wood_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "neomod:block/stripped_ghostly_wood"
+    },
+    "axis=z": {
+      "model": "neomod:block/stripped_ghostly_wood_horizontal",
+      "x": 90
+    }
+  }
+}

@@ -1,4 +1,4 @@
-package com.jacobpmods.neomod.item.custom.enchantment;
+package com.jacobpmods.neomod.item.custom.enchantment.effects;
 
 import com.jacobpmods.block.ModBlocks;
 import com.jacobpmods.neomod.item.ModItems;

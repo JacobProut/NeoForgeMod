@@ -8,6 +8,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
@@ -32,10 +33,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_GHOSTLY_WOOD.get()), blockTexture(ModBlocks.STRIPPED_GHOSTLY_LOG.get()), blockTexture(ModBlocks.STRIPPED_GHOSTLY_LOG.get()));
 
 
-        blockWithItem(ModBlocks.LOG_GHOSTLY);
-        blockWithItem(ModBlocks.WOOD_GHOSTLY);
-        blockWithItem(ModBlocks.STRIPPED_GHOSTLY_LOG);
-        blockWithItem(ModBlocks.STRIPPED_GHOSTLY_WOOD);
+        //Error when these are added
+        blockItem(ModBlocks.LOG_GHOSTLY);
+        blockItem(ModBlocks.WOOD_GHOSTLY);
+        blockItem(ModBlocks.STRIPPED_GHOSTLY_LOG);
+        blockItem(ModBlocks.STRIPPED_GHOSTLY_WOOD);
 
 
         blockWithItem(ModBlocks.PLANKS_GHOSTLY);
@@ -58,5 +60,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     private void saplingBlock(DeferredBlock<Block> deferredBlock) {
         simpleBlock(deferredBlock.get(), models().cross(BuiltInRegistries.BLOCK.getKey(deferredBlock.get()).getPath(), blockTexture(deferredBlock.get())).renderType("cutout"));
+    }
+
+    private void blockItem(DeferredBlock<Block> deferredBlock) {
+        simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("mccourse:block/" + deferredBlock.getId().getPath()));
+    }
+
+    private void blockItem(DeferredBlock<Block> deferredBlock, String appendix) {
+        simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("mccourse:block/" + deferredBlock.getId().getPath() + appendix));
     }
 }

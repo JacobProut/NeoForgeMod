@@ -1,6 +1,7 @@
 package com.jacobpmods.block;
 
 import com.jacobpmods.block.custom.ModFlammableRotatedPillarBlock;
+import com.jacobpmods.block.custom.ModSaplingBlock;
 import com.jacobpmods.neomod.FirstNeoMod;
 import com.jacobpmods.neomod.item.ModItems;
 import com.jacobpmods.neomod.item.custom.block.GhostlyBlock;
@@ -87,8 +88,8 @@ public class ModBlocks {
     });
 
     public static final DeferredBlock<Block> GHOSTLY_SAPLING = registerBlock("ghostly_sapling",
-            () -> new SaplingBlock(ModTreeGrowers.GHOSTLY, BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_SAPLING)
-            .strength(1f).sound(SoundType.CHERRY_SAPLING)));
+            () -> new ModSaplingBlock(ModTreeGrowers.GHOSTLY, BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_SAPLING)
+            .strength(1f).sound(SoundType.CHERRY_SAPLING),  ModBlocks.GHOSTLY_GRASS_BLOCK.get()));
 
 
 

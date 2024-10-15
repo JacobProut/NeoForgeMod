@@ -33,11 +33,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_GHOSTLY_WOOD.get()), blockTexture(ModBlocks.STRIPPED_GHOSTLY_LOG.get()), blockTexture(ModBlocks.STRIPPED_GHOSTLY_LOG.get()));
 
 
-        //Error when these are added
         blockItem(ModBlocks.LOG_GHOSTLY);
         blockItem(ModBlocks.WOOD_GHOSTLY);
         blockItem(ModBlocks.STRIPPED_GHOSTLY_LOG);
         blockItem(ModBlocks.STRIPPED_GHOSTLY_WOOD);
+
+        blockWithItem(ModBlocks.GHOSTLY_WEB);
 
 
         blockWithItem(ModBlocks.PLANKS_GHOSTLY);

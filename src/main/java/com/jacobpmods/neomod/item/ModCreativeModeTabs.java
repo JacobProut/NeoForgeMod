@@ -51,6 +51,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.PLANKS_GHOSTLY.get());
                         output.accept(ModBlocks.GHOSTLY_SAPLING.get());
                         output.accept(ModBlocks.GHOSTLY_LEAVES.get());
+                        output.accept(ModBlocks.GHOSTLY_WEB.get());
 
 
                         //Find a way to add magma mine book

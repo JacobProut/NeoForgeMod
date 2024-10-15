@@ -1,8 +1,9 @@
-// 1.21.1	2024-10-12T04:43:28.8248877	Loot Tables
+// 1.21.1	2024-10-15T01:23:44.2171637	Loot Tables
 949c0cfe594371241204a73bc540e5cd2fa0e419 data/neomod/loot_table/blocks/ghostly_dirt.json
 0b76ad76d4f7d34c5699bd51a5df409839e50bd8 data/neomod/loot_table/blocks/ghostly_grass_block.json
 a79a7cba2b40045242ac56f40ee7ab7dea896f2d data/neomod/loot_table/blocks/ghostly_leaves.json
 69a873f6c93e552b045491d744128341848e5358 data/neomod/loot_table/blocks/ghostly_sapling.json
+719b312cf175f44a1f38b053eb1dc9ad8eab5379 data/neomod/loot_table/blocks/ghostly_web.json
 c410aed39676adc0a942e20f4a6473841988ab83 data/neomod/loot_table/blocks/log_ghostly.json
 e32c99559e2962408d160832213fd41284395d49 data/neomod/loot_table/blocks/nexon_block.json
 b4a3d717228d4fc00615db74a7129f6dfb41ddea data/neomod/loot_table/blocks/nexon_ore_block.json

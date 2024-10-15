@@ -53,6 +53,9 @@ public class FirstNeoMod {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
 
+        //used for changing grass to ghostly in new dimension
+        //SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeRules());
+
     }
 
     // Add the example block item to the building blocks tab
@@ -79,6 +82,10 @@ public class FirstNeoMod {
             event.accept(ModBlocks.PLANKS_GHOSTLY);
             event.accept(ModBlocks.GHOSTLY_LEAVES);
             event.accept(ModBlocks.GHOSTLY_SAPLING);
+
+
+            //Teleporter
+            event.accept(ModBlocks.GHOSTLY_WEB);
         }
 
 

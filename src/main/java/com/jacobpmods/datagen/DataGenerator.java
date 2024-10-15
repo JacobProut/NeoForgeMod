@@ -35,10 +35,11 @@ public class DataGenerator {
         generator.addProvider(event.includeServer(), new ModItemTagProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
         generator.addProvider(event.includeServer(), new ModDataMapProvider(packOutput, lookupProvider));
 
-        //These two coinside and have issues
+        //These two coinside and have issues. ALL MODWORLDGEN/MODDATAREGISTRY NEED TO BE ADDED TO COMBINEDDATAPROVIDER
         /*generator.addProvider(event.includeServer(), new ModDataRegistryProvider(packOutput, lookupProvider));
         generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookupProvider));*/
         generator.addProvider(event.includeServer(), new CombinedDataProvider(packOutput, lookupProvider));
+
 
 
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));

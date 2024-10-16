@@ -11,7 +11,7 @@ import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
 import net.minecraft.world.level.levelgen.NoiseSettings;
 
 public class ModNoiseGeneratorSettings {
-    public static final ResourceKey<NoiseGeneratorSettings> MODBIOME_GENERATION = ResourceKey.create(
+    public static final ResourceKey<NoiseGeneratorSettings> GHOSTLY_BIOME_GENERATION = ResourceKey.create(
             Registries.NOISE_SETTINGS, ResourceLocation.fromNamespaceAndPath(FirstNeoMod.MOD_ID,"ghostly_dim")
     );
     public static void bootstrap(BootstrapContext<NoiseGeneratorSettings> context) {
@@ -20,7 +20,7 @@ public class ModNoiseGeneratorSettings {
 
         // Trees
         NoiseGeneratorSettings settings =  NoiseGeneratorSettings.overworld(context, false, true);
-        context.register(MODBIOME_GENERATION,
+        context.register(GHOSTLY_BIOME_GENERATION,
                 new NoiseGeneratorSettings(
                         new NoiseSettings(0, 384, 1, 2),
                         ModBlocks.GHOSTLY_STONE.get().defaultBlockState(),

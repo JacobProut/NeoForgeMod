@@ -19,7 +19,6 @@ import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator;
 import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
 
-import java.awt.*;
 import java.util.List;
 import java.util.OptionalLong;
 
@@ -34,20 +33,20 @@ public class ModDimensions {
 
     public static void bootstrapType(BootstrapContext<DimensionType> context) {
         context.register(GHOSTLY_DIM_TYPE, new DimensionType(
-                OptionalLong.of(12000), // fixedTime
+                OptionalLong.of(18000), // fixedTime
                 false, // hasSkylight
                 false, // hasCeiling
                 false, // ultraWarm
-                false, // natural
+                true, // natural
                 1.0, // coordinateScale
                 true, // bedWorks
                 false, // respawnAnchorWorks
-                0, // minY
+                -64, // minY
                 256, // height
                 256, // logicalHeight
                 BlockTags.INFINIBURN_OVERWORLD, // infiniburn
-                BuiltinDimensionTypes.OVERWORLD_EFFECTS, // effectsLocation
-                1.0f, // ambientLight
+                BuiltinDimensionTypes.END_EFFECTS, // effectsLocation
+                0.5f, // ambientLight
                 new DimensionType.MonsterSettings(false, false, ConstantInt.of(0), 0)));
     }
 
@@ -58,7 +57,7 @@ public class ModDimensions {
 
         NoiseBasedChunkGenerator wrappedChunkGenerator = new NoiseBasedChunkGenerator(
                 new FixedBiomeSource(biomeRegistry.getOrThrow(ModBiomes.GHOSTLY_BIOME)),
-                noiseGenSettings.getOrThrow(ModNoiseGeneratorSettings.MODBIOME_GENERATION)
+                noiseGenSettings.getOrThrow(ModNoiseGeneratorSettings.GHOSTLY_BIOME_GENERATION)
         );
 
         //ORIGINAL

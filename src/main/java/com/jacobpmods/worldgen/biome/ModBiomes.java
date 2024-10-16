@@ -1,7 +1,6 @@
 package com.jacobpmods.worldgen.biome;
 
 import com.jacobpmods.neomod.FirstNeoMod;
-import com.jacobpmods.worldgen.biome.surface.ModSurfaceRules;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstrapContext;

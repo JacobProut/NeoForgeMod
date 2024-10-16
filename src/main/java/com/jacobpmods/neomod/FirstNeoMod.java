@@ -82,6 +82,7 @@ public class FirstNeoMod {
             event.accept(ModBlocks.PLANKS_GHOSTLY);
             event.accept(ModBlocks.GHOSTLY_LEAVES);
             event.accept(ModBlocks.GHOSTLY_SAPLING);
+            event.accept(ModBlocks.GHOSTLY_STONE);
 
 
             //Teleporter

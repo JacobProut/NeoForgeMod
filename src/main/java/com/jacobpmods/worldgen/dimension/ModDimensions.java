@@ -1,6 +1,7 @@
 package com.jacobpmods.worldgen.dimension;
 
 import com.jacobpmods.neomod.FirstNeoMod;
+import com.jacobpmods.worldgen.ModNoiseGeneratorSettings;
 import com.jacobpmods.worldgen.biome.ModBiomes;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.HolderGetter;
@@ -57,7 +58,13 @@ public class ModDimensions {
 
         NoiseBasedChunkGenerator wrappedChunkGenerator = new NoiseBasedChunkGenerator(
                 new FixedBiomeSource(biomeRegistry.getOrThrow(ModBiomes.GHOSTLY_BIOME)),
-                noiseGenSettings.getOrThrow(NoiseGeneratorSettings.AMPLIFIED));
+                noiseGenSettings.getOrThrow(ModNoiseGeneratorSettings.MODBIOME_GENERATION)
+        );
+
+        //ORIGINAL
+        /*NoiseBasedChunkGenerator wrappedChunkGenerator = new NoiseBasedChunkGenerator(
+                new FixedBiomeSource(biomeRegistry.getOrThrow(ModBiomes.GHOSTLY_BIOME)),
+                noiseGenSettings.getOrThrow(NoiseGeneratorSettings.AMPLIFIED));*/
 
         NoiseBasedChunkGenerator noiseBasedChunkGenerator = new NoiseBasedChunkGenerator(
                 MultiNoiseBiomeSource.createFromList(

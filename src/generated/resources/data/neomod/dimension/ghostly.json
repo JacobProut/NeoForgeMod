@@ -6,6 +6,6 @@
       "type": "minecraft:fixed",
       "biome": "neomod:ghostly_biome"
     },
-    "settings": "minecraft:amplified"
+    "settings": "neomod:ghostly_dim"
   }
 }

@@ -39,6 +39,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.STRIPPED_GHOSTLY_WOOD);
 
         blockWithItem(ModBlocks.GHOSTLY_WEB);
+        blockWithItem(ModBlocks.GHOSTLY_STONE);
 
 
         blockWithItem(ModBlocks.PLANKS_GHOSTLY);

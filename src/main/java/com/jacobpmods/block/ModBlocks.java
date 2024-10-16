@@ -96,6 +96,9 @@ public class ModBlocks {
     public static final DeferredBlock<Block> GHOSTLY_WEB = registerBlock("ghostly_web", () ->new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.COBWEB)
             .strength(1f).sound(SoundType.COBWEB)));
 
+    public static final DeferredBlock<Block> GHOSTLY_STONE = registerBlock("ghostly_stone", () ->new Block(BlockBehaviour.Properties.of()
+            .strength(2f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

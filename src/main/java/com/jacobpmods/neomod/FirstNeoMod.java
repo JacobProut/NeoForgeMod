@@ -1,11 +1,14 @@
 package com.jacobpmods.neomod;
 
 import com.jacobpmods.block.ModBlocks;
+import com.jacobpmods.entity.ModEntities;
+import com.jacobpmods.entity.client.SkeletalZombieRender;
 import com.jacobpmods.neomod.item.ModArmorMaterials;
 import com.jacobpmods.neomod.item.ModCreativeModeTabs;
 import com.jacobpmods.neomod.item.ModItems;
 import com.jacobpmods.neomod.item.custom.enchantment.ModEnchantmentEffects;
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -30,12 +33,7 @@ public class FirstNeoMod {
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
     public FirstNeoMod(IEventBus modEventBus, ModContainer modContainer) {
-        // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
-
-        // Register ourselves for server and other game events we are interested in.
-        // Note that this is necessary if and only if we want *this* class (FirstNeoMod) to respond directly to events.
-        // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
         ModCreativeModeTabs.register(modEventBus);
@@ -43,18 +41,16 @@ public class FirstNeoMod {
         ModBlocks.register(modEventBus);
         ModEnchantmentEffects.register(modEventBus);
         ModArmorMaterials.register(modEventBus);
+        ModEntities.register(modEventBus);
+
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
-        // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-
-        //used for changing grass to ghostly in new dimension
-        //SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeRules());
 
     }
 
@@ -85,11 +81,9 @@ public class FirstNeoMod {
             event.accept(ModBlocks.GHOSTLY_STONE);
 
 
-            //Teleporter
+            //Teleporter?
             event.accept(ModBlocks.GHOSTLY_WEB);
         }
-
-
 
     }
 
@@ -105,6 +99,7 @@ public class FirstNeoMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            EntityRenderers.register(ModEntities.SKELETAL_ZOMBIE.get(), SkeletalZombieRender::new);
 
         }
     }

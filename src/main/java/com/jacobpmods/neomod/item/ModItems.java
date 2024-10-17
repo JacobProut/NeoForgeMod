@@ -1,5 +1,6 @@
 package com.jacobpmods.neomod.item;
 
+import com.jacobpmods.entity.ModEntities;
 import com.jacobpmods.neomod.FirstNeoMod;
 import com.jacobpmods.neomod.item.custom.ModArmorItem;
 import com.jacobpmods.neomod.item.custom.food.speedapple;
@@ -8,6 +9,7 @@ import com.jacobpmods.neomod.item.custom.tools.NexonPickaxe;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -52,6 +54,9 @@ public class ModItems {
     public static final DeferredItem<Item> nexonboots = ITEMS.register("nexonboots",
             () -> new ModArmorItem(ModArmorMaterials.NEXON, ArmorItem.Type.BOOTS, new Item.Properties().fireResistant().durability(ArmorItem.Type.BOOTS.getDurability(42))));
 
+
+    public static final DeferredItem<Item> SKELETAL_ZOMBIE_SPAWN_EGG = ITEMS.register("skeletal_zombie_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SKELETAL_ZOMBIE, 0xdebd47, 0xccbfbe, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

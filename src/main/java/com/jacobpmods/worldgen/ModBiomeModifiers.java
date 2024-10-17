@@ -9,7 +9,6 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.world.BiomeModifier;
 import net.neoforged.neoforge.common.world.BiomeModifiers;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
@@ -25,6 +24,12 @@ public class ModBiomeModifiers {
 
         //HolderSet created to send a direct link to the Modded Biome
         HolderSet<Biome> ghostlyBiomes = HolderSet.direct(biomes.getOrThrow(ModBiomes.GHOSTLY_BIOME));
+
+        //This is for combined biomes
+       /* HolderSet<Biome> combinedBiomes = HolderSet.direct(
+                biomes.getOrThrow(ModBiomes.GHOSTLY_BIOME_KEY),
+                biomes.getOrThrow(Biomes.BIRCH_FOREST)
+        );*/
 
         context.register(ADD_TREE_GHOSTLY, new BiomeModifiers.AddFeaturesBiomeModifier(
             ghostlyBiomes, // I assume change this to a different biome for it to spawn else where.

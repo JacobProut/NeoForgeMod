@@ -40,6 +40,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.nexonleggings);
                         output.accept(ModItems.nexonboots);
 
+                        //Spawn Eggs
+                        output.accept(ModItems.SKELETAL_ZOMBIE_SPAWN_EGG);
+
                         //Nexon Blocks
                         output.accept(ModBlocks.NEXON_BLOCK.get());
                         output.accept(ModBlocks.NEXON_ORE_BLOCK.get());

@@ -10,7 +10,6 @@ import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.util.Mth;
 
 public class SkeletalZombieModel extends HierarchicalModel<SkeletalZombieEntity> {
-    // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     private final ModelPart skeletalZombie;
     private final ModelPart Body;
     private final ModelPart Head;

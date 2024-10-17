@@ -117,6 +117,12 @@
         "weight": 95
       },
       {
+        "type": "neomod:skeletalzombie",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 95
+      },
+      {
         "type": "minecraft:zombie_villager",
         "maxCount": 1,
         "minCount": 1,

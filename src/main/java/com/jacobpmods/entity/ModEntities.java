@@ -17,7 +17,7 @@ public class ModEntities {
 
     public static final Supplier<EntityType<SkeletalZombieEntity>> SKELETAL_ZOMBIE =
             ENTITY_TYPES.register("skeletalzombie", () -> EntityType.Builder.of(SkeletalZombieEntity::new, MobCategory.MONSTER)
-                    .sized(0.75f, 0.95f).build("skeletalzombie"));
+                    .sized(1f, 2f).build("skeletalzombie"));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

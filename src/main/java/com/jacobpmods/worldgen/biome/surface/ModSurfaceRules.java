@@ -8,7 +8,6 @@ import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import org.spongepowered.include.com.google.common.collect.ImmutableList;
 
-import static net.minecraft.world.level.block.Blocks.BEDROCK;
 
 public class ModSurfaceRules {
 

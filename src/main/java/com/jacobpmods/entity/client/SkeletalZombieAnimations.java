@@ -40,7 +40,6 @@ public class SkeletalZombieAnimations {
                     new Keyframe(1.0442F, KeyframeAnimations.degreeVec(0.0F, 0.0F, 0.0F), AnimationChannel.Interpolations.LINEAR)
             ))
             .build();
-}
 
     public static final AnimationDefinition SKELETAL_ZOMBIE_WALK = AnimationDefinition.Builder.withLength(0.5F).looping()
             .addAnimation("RightLeg", new AnimationChannel(AnimationChannel.Targets.ROTATION,

@@ -57,7 +57,8 @@ public class SkeletalZombieModel extends HierarchicalModel<SkeletalZombieEntity>
 
         this.animateWalk(SkeletalZombieAnimations.SKELETAL_ZOMBIE_WALK, limbSwing, limbSwingAmount, 2f, 2.5f); //changes animation speed
 
-        this.animate(entity.idleAnimationSate, SkeletalZombieAnimations.SKELETAL_ZOMBIE_IDLE, 1f, 1f);
+        this.animate(entity.idleAnimationSate, SkeletalZombieAnimations.SKELETAL_ZOMBIE_IDLE, ageInTicks, 1f);
+        this.animate(entity.attackAnimationSate, SkeletalZombieAnimations.SKELETAL_ZOMBIE_ATTACK, ageInTicks, 0.5f);
     }
 
     private void applyHeadRotation(float headYaw, float headPitch) {

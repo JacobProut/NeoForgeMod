@@ -26,7 +26,5 @@ public class SkeletalZombieRender extends MobRenderer<SkeletalZombieEntity, Skel
             pPoseStack.scale(0.45f,0.45f,0.45f);
         }
         super.render(skeletalZombieEntity, pEntityYaw, pPartialTicks, pPoseStack, pBuffer, pPackedLight);
-
-
     }
 }

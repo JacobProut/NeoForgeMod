@@ -1,7 +1,10 @@
 package com.jacobpmods.entity.custom;
 
-import com.jacobpmods.entity.attackgoals.SkeletalZombieAttackGoal;
+import com.jacobpmods.entity.ai.SkeletalZombieAttackGoal;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.AnimationState;
@@ -21,7 +24,14 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 
 public class SkeletalZombieEntity extends Monster {
-    public final AnimationState idleAnimationSate = new AnimationState();
+
+    //attack code
+    private static final EntityDataAccessor<Boolean> ATTACKING = SynchedEntityData.defineId(SkeletalZombieEntity.class, EntityDataSerializers.BOOLEAN);
+    public final AnimationState attackAnimationState = new AnimationState();
+    public int attackAnimationTimeout = 0;
+
+
+    public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
 
     //private final BreakDoorGoal breakDoorGoal;
@@ -52,7 +62,7 @@ public class SkeletalZombieEntity extends Monster {
 
     protected void addBehaviourGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(2, new SkeletalZombieAttackGoal(this, 1.0, false));
+        this.goalSelector.addGoal(2, new SkeletalZombieAttackGoal(this, 1.0, true));
         this.goalSelector.addGoal(6, new MoveThroughVillageGoal(this, 1.0, true, 4, this::canBreakDoors));
         this.goalSelector.addGoal(7, new WaterAvoidingRandomStrollGoal(this, 1.0));
         //this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, new Class[0])).setAlertOthers(new Class[]{ZombifiedPiglin.class}));
@@ -109,11 +119,38 @@ public class SkeletalZombieEntity extends Monster {
     private void setupAnimationStates() {
         if(this.idleAnimationTimeout <= 0) {
             this.idleAnimationTimeout = 40;
-            this.idleAnimationSate.start(this.tickCount);
+            this.idleAnimationState.start(this.tickCount);
         } else {
             --this.idleAnimationTimeout;
         }
+
+        if(this.isAttacking() && attackAnimationTimeout <= 0) {
+            attackAnimationTimeout = 20; //length in ticks of animation. 20ticks for 1 second
+            attackAnimationState.start(this.tickCount);
+        } else {
+            --this.attackAnimationTimeout;
+        }
+        if(!this.isAttacking()) {
+            attackAnimationState.stop();
+        }
+
     }
+
+
+    public void setAttacking(boolean attacking) {
+        this.entityData.set(ATTACKING, attacking);
+    }
+
+    public boolean isAttacking() {
+        return this.entityData.get(ATTACKING);
+    }
+
+    @Override
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
+        builder.define(ATTACKING, false);
+    }
+
 
     @Override
     public void tick() {

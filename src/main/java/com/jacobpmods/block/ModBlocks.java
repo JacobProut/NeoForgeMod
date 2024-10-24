@@ -2,6 +2,7 @@ package com.jacobpmods.block;
 
 import com.jacobpmods.block.custom.ModFlammableRotatedPillarBlock;
 import com.jacobpmods.block.custom.ModSaplingBlock;
+import com.jacobpmods.block.custom.Pedestal;
 import com.jacobpmods.neomod.FirstNeoMod;
 import com.jacobpmods.neomod.item.ModItems;
 import com.jacobpmods.neomod.item.custom.block.GhostlyBlock;
@@ -99,6 +100,8 @@ public class ModBlocks {
     public static final DeferredBlock<Block> GHOSTLY_STONE = registerBlock("ghostly_stone", () ->new Block(BlockBehaviour.Properties.of()
             .strength(2f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
+    public static final DeferredBlock<Block> PEDESTAL = registerBlock("pedestal", () ->new Pedestal(BlockBehaviour.Properties.of()
+            .noOcclusion().sound(SoundType.STONE)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

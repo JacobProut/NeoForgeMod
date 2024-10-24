@@ -42,6 +42,7 @@ public class ModCreativeModeTabs {
 
                         //Spawn Eggs
                         output.accept(ModItems.SKELETAL_ZOMBIE_SPAWN_EGG);
+                        output.accept(ModItems.SKELETAL_ENDERMAN_SPAWN_EGG);
 
                         //Nexon Blocks
                         output.accept(ModBlocks.NEXON_BLOCK.get());

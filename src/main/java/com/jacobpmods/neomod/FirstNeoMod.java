@@ -2,7 +2,9 @@ package com.jacobpmods.neomod;
 
 import com.jacobpmods.block.ModBlocks;
 import com.jacobpmods.entity.ModEntities;
-import com.jacobpmods.entity.client.SkeletalZombieRender;
+import com.jacobpmods.entity.client.skeletal.enderman.SkeletalEndermanModel;
+import com.jacobpmods.entity.client.skeletal.enderman.SkeletalEndermanRender;
+import com.jacobpmods.entity.client.skeletal.zombie.SkeletalZombieRender;
 import com.jacobpmods.neomod.item.ModArmorMaterials;
 import com.jacobpmods.neomod.item.ModCreativeModeTabs;
 import com.jacobpmods.neomod.item.ModItems;
@@ -100,7 +102,7 @@ public class FirstNeoMod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(ModEntities.SKELETAL_ZOMBIE.get(), SkeletalZombieRender::new);
-
+            EntityRenderers.register(ModEntities.SKELETAL_ENDERMAN.get(), SkeletalEndermanRender::new);
         }
     }
 }

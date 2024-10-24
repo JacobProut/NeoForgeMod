@@ -58,6 +58,9 @@ public class ModItems {
     public static final DeferredItem<Item> SKELETAL_ZOMBIE_SPAWN_EGG = ITEMS.register("skeletal_zombie_egg",
             () -> new DeferredSpawnEggItem(ModEntities.SKELETAL_ZOMBIE, 0xFFFFFF, 0xD3D3D3, new Item.Properties()));
 
+    public static final DeferredItem<Item> SKELETAL_ENDERMAN_SPAWN_EGG = ITEMS.register("skeletal_enderman_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.SKELETAL_ENDERMAN, 0xFFFFFF, 0xD3D3D3, new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

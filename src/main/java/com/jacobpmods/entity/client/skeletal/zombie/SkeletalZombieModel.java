@@ -1,4 +1,4 @@
-package com.jacobpmods.entity.client;
+package com.jacobpmods.entity.client.skeletal.zombie;
 
 import com.jacobpmods.entity.custom.SkeletalZombieEntity;
 import com.mojang.blaze3d.vertex.PoseStack;

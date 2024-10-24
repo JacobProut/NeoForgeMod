@@ -1,5 +1,6 @@
-package com.jacobpmods.entity.client;
+package com.jacobpmods.entity.client.skeletal.zombie;
 
+import com.jacobpmods.entity.client.ModModelLayers;
 import com.jacobpmods.entity.custom.SkeletalZombieEntity;
 import com.jacobpmods.neomod.FirstNeoMod;
 import com.mojang.blaze3d.vertex.PoseStack;

@@ -1,4 +1,4 @@
-package com.jacobpmods.entity.client;
+package com.jacobpmods.entity.client.skeletal.zombie;
 
 import net.minecraft.client.animation.AnimationChannel;
 import net.minecraft.client.animation.AnimationDefinition;

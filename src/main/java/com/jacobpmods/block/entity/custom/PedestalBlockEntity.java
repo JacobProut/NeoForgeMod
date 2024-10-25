@@ -90,12 +90,11 @@ public class PedestalBlockEntity extends BlockEntity implements Container {
         ContainerHelper.loadAllItems(tag, inventory, registries);
     }
 
+    //Thanks to Jack Pollard in the kaupenjoe comments
     public float getRenderingRotation() {
-        rotation += 0.5f;
-        if(rotation >= 360) {
-            rotation = 0;
-        }
-        return  rotation;
+        long time = level.getGameTime(); // Get the world time
+        float speedMultiplier = 1.0f; // Adjust this value to control speed, where 1.0f is normal speed
+        return (time * speedMultiplier) % 360;
     }
 
     @Nullable

@@ -2,6 +2,7 @@ package com.jacobpmods.neomod.datagen;
 
 import com.jacobpmods.neomod.block.ModBlocks;
 import com.jacobpmods.neomod.FirstNeoMod;
+import com.jacobpmods.neomod.fluid.ModFluids;
 import com.jacobpmods.neomod.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
@@ -47,26 +48,32 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.fireball.get());
         basicItem(ModItems.speedapple.get());
 
+        //Fluids
+        basicItem(ModFluids.POISONED_WATER_BUCKET.get());
+
+        //Nexon
         basicItem(ModItems.nexon.get());
         basicItem(ModItems.heatednexon.get());
         basicItem(ModItems.nexoningot.get());
         basicItem(ModItems.nexonreinforcedingot.get());
 
-
+        //Nexon Tools
         handheldItem(ModItems.nexonpickaxe);
         handheldItem(ModItems.nexonhoe);
         handheldItem(ModItems.nexonshovel);
         handheldItem(ModItems.nexonsword);
         handheldItem(ModItems.nexonaxe);
 
+        //Nexon Armor
         trimmedArmorItem(ModItems.nexonhelmet);
         trimmedArmorItem(ModItems.nexonchestplate);
         trimmedArmorItem(ModItems.nexonleggings);
         trimmedArmorItem(ModItems.nexonboots);
 
+        //Saplings
         saplingItem(ModBlocks.GHOSTLY_SAPLING);
 
-
+        //Spawn Eggs
         withExistingParent(ModItems.SKELETAL_ZOMBIE_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.SKELETAL_ENDERMAN_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 

@@ -1,4 +1,4 @@
-// 1.21.1	2024-10-24T00:10:20.914028	Item Models: neomod
+// 1.21.1	2024-10-25T13:42:37.090769	Item Models: neomod
 14c5b11b47fba897b1c341bb9e5a2cd24017678c assets/neomod/models/item/ghostly_sapling.json
 bb1db9b27e848db13a425e9df60ae7e1765aabe7 assets/neomod/models/item/nexon.json
 706cabc0cb7a7ce7084070578ecf92ebdc0313f9 assets/neomod/models/item/nexonaxe.json
@@ -53,6 +53,7 @@ ddd3bd1115f5b19a56e832f60b3bb54b913b7039 assets/neomod/models/item/nexonleggings
 d5a6708669f2c7bc1936264494425a6f54037cb0 assets/neomod/models/item/nexonreinforcedingot.json
 089f062289691928b12ae5514b13eedbc52c1737 assets/neomod/models/item/nexonshovel.json
 b27910064c82410fb373ecd37302dca9c38b50ae assets/neomod/models/item/nexonsword.json
+1959b294b841ca63537cbf06722b63bfa5c0e8d7 assets/neomod/models/item/poisoned_water_bucket.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/neomod/models/item/skeletal_enderman_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/neomod/models/item/skeletal_zombie_egg.json
 66b7a359dbf78b96087c99c975d23fe33fe89f32 assets/neomod/models/item/speedapple.json

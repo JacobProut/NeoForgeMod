@@ -2,6 +2,7 @@ package com.jacobpmods.neomod.item;
 
 import com.jacobpmods.neomod.block.ModBlocks;
 import com.jacobpmods.neomod.FirstNeoMod;
+import com.jacobpmods.neomod.fluid.ModFluids;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -56,6 +57,9 @@ public class ModCreativeModeTabs {
 
                         //Custom Block Models
                         output.accept(ModBlocks.PEDESTAL.get());
+
+                        //Fluids
+                        output.accept(ModFluids.POISONED_WATER_BUCKET);
 
                     }).build());
 

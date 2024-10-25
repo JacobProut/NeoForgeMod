@@ -1,6 +1,6 @@
 package com.jacobpmods.neomod.item;
 
-import com.jacobpmods.entity.ModEntities;
+import com.jacobpmods.neomod.entity.ModEntities;
 import com.jacobpmods.neomod.FirstNeoMod;
 import com.jacobpmods.neomod.item.custom.ModArmorItem;
 import com.jacobpmods.neomod.item.custom.food.speedapple;

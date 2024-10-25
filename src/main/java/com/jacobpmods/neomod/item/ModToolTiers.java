@@ -1,6 +1,6 @@
 package com.jacobpmods.neomod.item;
 
-import com.jacobpmods.util.ModTags;
+import com.jacobpmods.neomod.util.ModTags;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.neoforged.neoforge.common.SimpleTier;

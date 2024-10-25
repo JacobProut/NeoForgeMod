@@ -1,14 +1,11 @@
 package com.jacobpmods.neomod.item;
 
-import com.jacobpmods.block.ModBlocks;
+import com.jacobpmods.neomod.block.ModBlocks;
 import com.jacobpmods.neomod.FirstNeoMod;
-import com.jacobpmods.neomod.item.custom.enchantment.ModEnchantmentEffects;
-import com.jacobpmods.neomod.item.custom.enchantment.ModEnchantments;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.ItemLike;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 

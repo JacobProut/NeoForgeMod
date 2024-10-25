@@ -1,12 +1,11 @@
 package com.jacobpmods.neomod;
 
-import com.jacobpmods.block.ModBlocks;
-import com.jacobpmods.block.entity.custom.ModBlockEntities;
-import com.jacobpmods.block.entity.renderer.PedestalBlockEntityRenderer;
-import com.jacobpmods.entity.ModEntities;
-import com.jacobpmods.entity.client.skeletal.enderman.SkeletalEndermanModel;
-import com.jacobpmods.entity.client.skeletal.enderman.SkeletalEndermanRender;
-import com.jacobpmods.entity.client.skeletal.zombie.SkeletalZombieRender;
+import com.jacobpmods.neomod.block.ModBlocks;
+import com.jacobpmods.neomod.block.entity.custom.ModBlockEntities;
+import com.jacobpmods.neomod.block.entity.renderer.PedestalBlockEntityRenderer;
+import com.jacobpmods.neomod.entity.ModEntities;
+import com.jacobpmods.neomod.entity.client.skeletal.enderman.SkeletalEndermanRender;
+import com.jacobpmods.neomod.entity.client.skeletal.zombie.SkeletalZombieRender;
 import com.jacobpmods.neomod.item.ModArmorMaterials;
 import com.jacobpmods.neomod.item.ModCreativeModeTabs;
 import com.jacobpmods.neomod.item.ModItems;

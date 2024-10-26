@@ -2,12 +2,12 @@ package com.jacobpmods.neomod.fluid;
 
 import com.jacobpmods.neomod.FirstNeoMod;
 import com.jacobpmods.neomod.block.ModBlocks;
+import com.jacobpmods.neomod.block.fluids.PoisonedWaterBlock;
 import com.jacobpmods.neomod.item.ModItems;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -30,7 +30,7 @@ public class ModFluids {
     public static final Supplier<FlowingFluid> FLOWING_POISONED_WATER = FLUIDS.register("flowing_poisoned_water",
             () -> new BaseFlowingFluid.Flowing(ModFluids.POISONED_WATER_PROPERTIES));
     public static final DeferredBlock<LiquidBlock> POISONED_WATER_BLOCK = ModBlocks.BLOCKS.register("poisoned_water_block",
-            () -> new LiquidBlock(ModFluids.SOURCE_POISONED_WATER.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).noLootTable()));
+            () -> new PoisonedWaterBlock(ModFluids.SOURCE_POISONED_WATER.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).noLootTable()));
     public static final DeferredItem<Item> POISONED_WATER_BUCKET = ModItems.ITEMS.registerItem("poisoned_water_bucket",
             properties -> new BucketItem(ModFluids.SOURCE_POISONED_WATER.get(), properties.craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final BaseFlowingFluid.Properties POISONED_WATER_PROPERTIES = new BaseFlowingFluid.Properties(

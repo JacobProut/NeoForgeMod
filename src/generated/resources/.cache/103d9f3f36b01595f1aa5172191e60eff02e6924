@@ -1,10 +1,10 @@
-// 1.21.1	2024-10-16T02:41:38.991866	Registries
+// 1.21.1	2024-10-26T13:11:04.3317787	Registries
 193fe546dbe10a81e975fb7a48dfcbcd814f756a data/neomod/dimension/ghostly.json
 6ac316a2461fc61784bc58f9e634d7eddcaeebbb data/neomod/dimension_type/ghostly_type.json
 c9b78bb3763603d079f3dbf3fbacbabac5f49e1d data/neomod/enchantment/ice_barrage_melee.json
 ae3ba0606bdc3c5c1b6d12aff6656aa98feeb63b data/neomod/enchantment/magma_mine.json
 a481d4362f6d737ab3eee1800e6dd7e459ae6e8b data/neomod/neoforge/biome_modifier/add_tree_ghostly.json
-1af5d334b046ae3ec8d45f49da6dc5d286038954 data/neomod/worldgen/biome/ghostly_biome.json
+7f0491336f6320a140be7eb55d6c6c2bdf2b49da data/neomod/worldgen/biome/ghostly_biome.json
 0270389b49ad780ae97980b6632c3bcdfff18176 data/neomod/worldgen/configured_feature/ghostly.json
 79b6795ac362a3e3ae04ace5c1dc0177d152e07d data/neomod/worldgen/noise_settings/ghostly_dim.json
 26f90aea2a7fe00f21304664438021eb87a92ee0 data/neomod/worldgen/placed_feature/ghostly_placed.json

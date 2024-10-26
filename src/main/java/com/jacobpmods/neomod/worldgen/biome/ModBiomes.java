@@ -61,8 +61,8 @@ public class ModBiomes {
                 .generationSettings(biomeBuilder.build())
                 .mobSpawnSettings(spawnBuilder.build())
                 .specialEffects((new BiomeSpecialEffects.Builder())
-                        .waterColor(0x32CD32)
-                        .waterFogColor(0x32CD32)
+                        .waterColor(0xFF0000)
+                        .waterFogColor(0xFF6666)
                         .skyColor(0xD3D3D3)
                         .grassColorOverride(0xADD8E6) // Grass color
                         //.foliageColorOverride(0xd203fc) //Leaves/Ferms n stuff like that

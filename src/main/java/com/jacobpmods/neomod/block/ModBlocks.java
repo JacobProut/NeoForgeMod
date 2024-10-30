@@ -71,7 +71,7 @@ public class ModBlocks {
     });
 
     public static final DeferredBlock<Block> GHOSTLY_LEAVES = registerBlock("ghostly_leaves", () ->new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)
-            .strength(1f).sound(SoundType.CHERRY_LEAVES)) {
+            .strength(0.2f).sound(SoundType.CHERRY_LEAVES)) {
         @Override
         public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
             return true;

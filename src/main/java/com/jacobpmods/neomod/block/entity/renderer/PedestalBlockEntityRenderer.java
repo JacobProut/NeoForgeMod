@@ -26,7 +26,7 @@ public class PedestalBlockEntityRenderer implements BlockEntityRenderer<Pedestal
                        MultiBufferSource multiBufferSource, int packedLight, int packedOverlay) {
 
         ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
-        ItemStack stack = pedestalBlockEntity.getItem(0);
+        ItemStack stack = pedestalBlockEntity.inventory.getStackInSlot(0);
 
         poseStack.pushPose();
         poseStack.translate(0.5f, 1.15f, 0.5f);

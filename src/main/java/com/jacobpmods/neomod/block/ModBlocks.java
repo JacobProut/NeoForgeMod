@@ -101,7 +101,7 @@ public class ModBlocks {
             .strength(2f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
     public static final DeferredBlock<Block> PEDESTAL = registerBlock("pedestal", () ->new PedestalBlock(BlockBehaviour.Properties.of()
-            .noOcclusion().sound(SoundType.STONE)));
+            .strength(7f).destroyTime(100000).noOcclusion().sound(SoundType.STONE)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

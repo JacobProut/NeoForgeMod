@@ -2,6 +2,7 @@ package com.jacobpmods.neomod.worldgen;
 
 import com.jacobpmods.neomod.block.ModBlocks;
 import com.jacobpmods.neomod.FirstNeoMod;
+import com.jacobpmods.neomod.fluid.ModFluids;
 import com.jacobpmods.neomod.worldgen.biome.surface.ModSurfaceRules;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -24,7 +25,7 @@ public class ModNoiseGeneratorSettings {
                 new NoiseGeneratorSettings(
                         new NoiseSettings(0, 384, 1, 2),
                         ModBlocks.GHOSTLY_STONE.get().defaultBlockState(),
-                        settings.defaultFluid(),
+                        ModFluids.SOURCE_POISONED_WATER.get().defaultFluidState().createLegacyBlock(),  // Use poisoned water as the default fluid
                         settings.noiseRouter(),
                         ModSurfaceRules.makeRules(),
                         settings.spawnTarget(),

@@ -4,7 +4,7 @@
     "Name": "neomod:ghostly_stone"
   },
   "default_fluid": {
-    "Name": "minecraft:water",
+    "Name": "neomod:poisoned_water_block",
     "Properties": {
       "level": "0"
     }

@@ -47,7 +47,17 @@ public class ModSurfaceRules {
         return SurfaceRules.sequence(builder.build().toArray(SurfaceRules.RuleSource[]::new));
     }
 
-    //ORIGINAL
+    private static SurfaceRules.RuleSource makeStateRule(Block block) {
+        return SurfaceRules.state(block.defaultBlockState());
+    }
+
+}
+
+
+
+
+
+//ORIGINAL
     /*public static SurfaceRules.RuleSource makeRules() {
         SurfaceRules.ConditionSource isAtOrAboveWaterLevel = SurfaceRules.waterBlockCheck(-1, 0);
 
@@ -62,9 +72,3 @@ public class ModSurfaceRules {
                 SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface)
         )));
     }*/
-
-    private static SurfaceRules.RuleSource makeStateRule(Block block) {
-        return SurfaceRules.state(block.defaultBlockState());
-    }
-
-}

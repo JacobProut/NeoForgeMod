@@ -1,5 +1,6 @@
 package com.jacobpmods.neomod.block;
 
+import com.jacobpmods.neomod.block.custom.GhostlyPortalBlock;
 import com.jacobpmods.neomod.block.custom.ModFlammableRotatedPillarBlock;
 import com.jacobpmods.neomod.block.custom.ModSaplingBlock;
 import com.jacobpmods.neomod.block.custom.PedestalBlock;
@@ -94,7 +95,7 @@ public class ModBlocks {
 
 
     //will edit later. PLACEHOLDER FOR TELEPORTER TO DIMENSION
-    public static final DeferredBlock<Block> GHOSTLY_WEB = registerBlock("ghostly_web", () ->new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.COBWEB)
+    public static final DeferredBlock<GhostlyPortalBlock> GHOSTLY_WEB = registerBlock("ghostly_web", () ->new GhostlyPortalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COBWEB)
             .strength(1f).sound(SoundType.COBWEB)));
 
     public static final DeferredBlock<Block> GHOSTLY_STONE = registerBlock("ghostly_stone", () ->new Block(BlockBehaviour.Properties.of()

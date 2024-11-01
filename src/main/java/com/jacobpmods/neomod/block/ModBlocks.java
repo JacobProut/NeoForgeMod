@@ -95,7 +95,7 @@ public class ModBlocks {
 
 
     //will edit later. PLACEHOLDER FOR TELEPORTER TO DIMENSION
-    public static final DeferredBlock<GhostlyPortalBlock> GHOSTLY_WEB = registerBlock("ghostly_web", () ->new GhostlyPortalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COBWEB)
+    public static final DeferredBlock<Block> GHOSTLY_WEB = registerBlock("ghostly_web", () ->new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.COBWEB)
             .strength(1f).sound(SoundType.COBWEB)));
 
     public static final DeferredBlock<Block> GHOSTLY_STONE = registerBlock("ghostly_stone", () ->new Block(BlockBehaviour.Properties.of()
@@ -104,6 +104,8 @@ public class ModBlocks {
     public static final DeferredBlock<Block> PEDESTAL = registerBlock("pedestal", () ->new PedestalBlock(BlockBehaviour.Properties.of()
             .strength(7f).destroyTime(100000).noOcclusion().sound(SoundType.STONE)));
 
+    public static final DeferredBlock<GhostlyPortalBlock> GHOSTLY_PORTAL_BLOCK = registerBlock("ghostly_portal_block", () ->new GhostlyPortalBlock(BlockBehaviour.Properties.of()
+            .strength(7f).destroyTime(100000).noOcclusion().sound(SoundType.GLASS)));
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);

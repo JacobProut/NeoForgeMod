@@ -101,7 +101,7 @@ public class GhostlyPortalBlock extends Block implements Portal {
             double d0 = pos.getX() + random.nextDouble();
             double d1 = pos.getY() + random.nextDouble();
             double d2 = pos.getZ() + random.nextDouble();
-            level.addParticle(ParticleTypes.FLAME, d0, d1, d2, 0, 0, 0);
+            level.addParticle(ParticleTypes.PORTAL, d0, d1, d2, 0, 0, 0);
         }
     }
 

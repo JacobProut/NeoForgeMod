@@ -61,6 +61,9 @@ public class ModCreativeModeTabs {
                         //Fluids
                         output.accept(ModFluids.POISONED_WATER_BUCKET);
 
+                        //Portals
+                        output.accept(ModBlocks.GHOSTLY_PORTAL_BLOCK.get());
+
                     }).build());
 
 

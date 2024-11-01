@@ -55,6 +55,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.GHOSTLY_LEAVES.get());
                         output.accept(ModBlocks.GHOSTLY_WEB.get());
 
+                        //BONE ITEMS
+                        output.accept(ModBlocks.BONE_BRICK.get());
+
                         //Custom Block Models
                         output.accept(ModBlocks.PEDESTAL.get());
 

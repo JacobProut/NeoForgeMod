@@ -1,6 +1,7 @@
 package com.jacobpmods.neomod.datagen;
 
 import com.jacobpmods.neomod.FirstNeoMod;
+import com.jacobpmods.neomod.block.custom.portal.setup.ModPoiTypes;
 import com.jacobpmods.neomod.item.custom.enchantment.ModEnchantments;
 import com.jacobpmods.neomod.worldgen.ModBiomeModifiers;
 import com.jacobpmods.neomod.worldgen.ModConfiguredFeatures;

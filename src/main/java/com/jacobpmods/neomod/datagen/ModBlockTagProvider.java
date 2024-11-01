@@ -5,6 +5,7 @@ import com.jacobpmods.neomod.FirstNeoMod;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Portal;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -70,6 +71,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.STRIPPED_GHOSTLY_LOG.get())
                 .add(ModBlocks.STRIPPED_GHOSTLY_WOOD.get());
 
+        this.tag(PORTALS)
+                .add(ModBlocks.GHOSTLY_PORTAL_BLOCK.get());
 
     }
 }

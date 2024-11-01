@@ -1,6 +1,7 @@
 package com.jacobpmods.neomod.block;
 
-import com.jacobpmods.neomod.block.custom.GhostlyPortalBlock;
+import com.jacobpmods.neomod.block.custom.portal.BoneBrick;
+import com.jacobpmods.neomod.block.custom.portal.GhostlyPortalBlock;
 import com.jacobpmods.neomod.block.custom.ModFlammableRotatedPillarBlock;
 import com.jacobpmods.neomod.block.custom.ModSaplingBlock;
 import com.jacobpmods.neomod.block.custom.PedestalBlock;
@@ -105,7 +106,10 @@ public class ModBlocks {
             .strength(7f).destroyTime(100000).noOcclusion().sound(SoundType.STONE)));
 
     public static final DeferredBlock<GhostlyPortalBlock> GHOSTLY_PORTAL_BLOCK = registerBlock("ghostly_portal_block", () ->new GhostlyPortalBlock(BlockBehaviour.Properties.of()
-            .strength(7f).destroyTime(100000).noOcclusion().sound(SoundType.GLASS)));
+            .strength(7f).destroyTime(100000).sound(SoundType.GLASS)));
+
+    public static final DeferredBlock<BoneBrick> BONE_BRICK = registerBlock("bone_brick", () ->new BoneBrick(BlockBehaviour.Properties.of()
+            .strength(2f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);

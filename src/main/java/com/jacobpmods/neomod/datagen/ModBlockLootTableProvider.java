@@ -37,6 +37,7 @@ public class ModBlockLootTableProvider  extends BlockLootSubProvider {
         dropSelf(ModBlocks.GHOSTLY_STONE.get());
         dropSelf(ModBlocks.PEDESTAL.get());
         dropSelf(ModBlocks.GHOSTLY_PORTAL_BLOCK.get());
+        dropSelf(ModBlocks.BONE_BRICK.get());
 
         this.add(ModBlocks.NEXON_ORE_BLOCK.get(),
                 block -> createMultipleOreDrops(ModBlocks.NEXON_ORE_BLOCK.get(), ModItems.nexon.get(), 1, 2));

@@ -35,7 +35,7 @@ public class ModBiomeModifiers {
         context.register(ADD_TREE_GHOSTLY, new BiomeModifiers.AddFeaturesBiomeModifier(
             ghostlyBiomes, // I assume change this to a different biome for it to spawn else where.
                 // For multiple biomes use: HolderSet.direct(biomes.getOrThrow(Biomes.PLAINS), biomes.getOrThrow(Biomes.BIRCH_FOREST))
-                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.GHOSTLY_PLACED_KEY)),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.GHOSTLY_TREE_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
         context.register(ADD_OOZING_FLOWER, new BiomeModifiers.AddFeaturesBiomeModifier(

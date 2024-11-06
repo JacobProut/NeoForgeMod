@@ -1,6 +1,6 @@
 {
   "type": "neoforge:add_features",
   "biomes": "neomod:ghostly_biome",
-  "features": "neomod:ghostly_placed",
+  "features": "neomod:ghostly_tree_placed",
   "step": "vegetal_decoration"
 }

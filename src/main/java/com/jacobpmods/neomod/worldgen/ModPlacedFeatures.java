@@ -17,13 +17,13 @@ import net.minecraft.world.level.levelgen.placement.*;
 import java.util.List;
 
 public class ModPlacedFeatures {
-    public static final ResourceKey<PlacedFeature> GHOSTLY_PLACED_KEY = registerKey("ghostly_placed");
+    public static final ResourceKey<PlacedFeature> GHOSTLY_TREE_PLACED_KEY = registerKey("ghostly_tree_placed");
 
     public static final ResourceKey<PlacedFeature> OOZING_FLOWER_PLACED_KEY = registerKey("oozing_flower_placed");
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
-        LogUtils.getLogger().debug("BOOTSTRAP: Registering Placed Features for GHOSTLY_PLACED_KEY");
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
-        register(context, GHOSTLY_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.GHOSTLY_KEY),
+
+        register(context, GHOSTLY_TREE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.GHOSTLY_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), ModBlocks.GHOSTLY_SAPLING.get()));
 
         register(context,OOZING_FLOWER_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OOZING_FLOWER),

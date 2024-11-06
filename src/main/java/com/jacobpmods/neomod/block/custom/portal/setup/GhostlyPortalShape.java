@@ -1,44 +1,28 @@
 package com.jacobpmods.neomod.block.custom.portal.setup;
 
-import com.jacobpmods.neomod.FirstNeoMod;
 import com.jacobpmods.neomod.block.ModBlocks;
-import com.jacobpmods.neomod.block.custom.portal.GhostlyPortalBlock;
-import net.minecraft.BlockUtil;
+import com.jacobpmods.neomod.util.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.NetherPortalBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.portal.PortalShape;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.neoforged.bus.api.ICancellableEvent;
-import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.common.extensions.IBlockStateExtension;
-import net.neoforged.neoforge.event.level.BlockEvent;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.function.Predicate;
 
 public class GhostlyPortalShape {
-    public static final Logger LOGGER = LoggerFactory.getLogger(FirstNeoMod.class);
-    private static final int MIN_WIDTH = 2;
-    public static final int MAX_WIDTH = 21;
-    private static final int MIN_HEIGHT = 3;
-    public static final int MAX_HEIGHT = 21;
-    private static final BlockBehaviour.StatePredicate FRAME = ModIBlockStateExtension::itIsPortalFrame;
-    private static final float SAFE_TRAVEL_MAX_ENTITY_XY = 4.0F;
-    private static final double SAFE_TRAVEL_MAX_VERTICAL_DELTA = 1.0;
+    private static final BlockBehaviour.StatePredicate FRAME = (state, level, pos) -> state.is(ModTags.Blocks.GHOSTLY_PORTAL_BLOCKS);
     private final LevelAccessor level;
     private final Direction.Axis axis;
     private final Direction rightDir;
@@ -48,21 +32,17 @@ public class GhostlyPortalShape {
     private int height;
     private final int width;
 
-
-  public static Optional<GhostlyPortalShape> findEmptyPortalShape(LevelAccessor level, BlockPos bottomLeft, Direction.Axis axis) {
-        return findPortalShape(level, bottomLeft, p_77727_ -> p_77727_.isValid() && p_77727_.numPortalBlocks == 0, axis);
+    public static Optional<GhostlyPortalShape> findEmptyPortalShape(LevelAccessor level, BlockPos bottomLeft, Direction.Axis axis) {
+        return findPortalShape(level, bottomLeft, (shape) -> shape.isValid() && shape.numPortalBlocks == 0, axis);
     }
 
     public static Optional<GhostlyPortalShape> findPortalShape(LevelAccessor level, BlockPos bottomLeft, Predicate<GhostlyPortalShape> predicate, Direction.Axis axis) {
-      LOGGER.info("Finding Portal Shape");
-      Optional<GhostlyPortalShape> optional = Optional.of(new GhostlyPortalShape(level, bottomLeft, axis)).filter(predicate);
-      LOGGER.info("Running Optional<GhostlyPortalShape> optional = Optional.of(new GhostlyPortalShape(level, bottomLeft, axis)).filter(predicate);");
+        Optional<GhostlyPortalShape> optional = Optional.of(new GhostlyPortalShape(level, bottomLeft, axis)).filter(predicate);
         if (optional.isPresent()) {
-            LOGGER.info("Portal is present");
             return optional;
         } else {
-            Direction.Axis direction$axis = axis == Direction.Axis.X ? Direction.Axis.Z : Direction.Axis.X;
-            return Optional.of(new GhostlyPortalShape(level, bottomLeft, direction$axis)).filter(predicate);
+            Direction.Axis directionAxis = axis == Direction.Axis.X ? Direction.Axis.Z : Direction.Axis.X;
+            return Optional.of(new GhostlyPortalShape(level, bottomLeft, directionAxis)).filter(predicate);
         }
     }
 
@@ -85,9 +65,8 @@ public class GhostlyPortalShape {
 
     @Nullable
     private BlockPos calculateBottomLeft(BlockPos pos) {
-        for(int i = Math.max(this.level.getMinBuildHeight(), pos.getY() - 21); pos.getY() > i && isEmpty(this.level.getBlockState(pos.below())); pos = pos.below()) {
+        for (int i = Math.max(this.level.getMinBuildHeight(), pos.getY() - 21); pos.getY() > i && isEmpty(this.level.getBlockState(pos.below())); pos = pos.below()) {
         }
-
         Direction direction = this.rightDir.getOpposite();
         int j = this.getDistanceUntilEdgeAboveFrame(pos, direction) - 1;
         return j < 0 ? null : pos.relative(direction, j);
@@ -99,66 +78,62 @@ public class GhostlyPortalShape {
     }
 
     private int getDistanceUntilEdgeAboveFrame(BlockPos pos, Direction direction) {
-        BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
-
-        for (int i = 0; i <= 21; i++) {
-            blockpos$mutableblockpos.set(pos).move(direction, i);
-            BlockState blockstate = this.level.getBlockState(blockpos$mutableblockpos);
-            if (!isEmpty(blockstate)) {
-                if (FRAME.test(blockstate, this.level, blockpos$mutableblockpos)) {
+        BlockPos.MutableBlockPos mutablePos = new BlockPos.MutableBlockPos();
+        for (int i = 0; i <= 21; ++i) {
+            mutablePos.set(pos).move(direction, i);
+            BlockState blockState = this.level.getBlockState(mutablePos);
+            if (!isEmpty(blockState)) {
+                if (FRAME.test(blockState, this.level, mutablePos)) {
                     return i;
                 }
                 break;
             }
-
-            BlockState blockstate1 = this.level.getBlockState(blockpos$mutableblockpos.move(Direction.DOWN));
-            if (!FRAME.test(blockstate1, this.level, blockpos$mutableblockpos)) {
+            BlockState belowState = this.level.getBlockState(mutablePos.move(Direction.DOWN));
+            if (!FRAME.test(belowState, this.level, mutablePos)) {
                 break;
             }
         }
-
         return 0;
     }
 
     private int calculateHeight() {
-        BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
-        int i = this.getDistanceUntilTop(blockpos$mutableblockpos);
-        return i >= 3 && i <= 21 && this.hasTopFrame(blockpos$mutableblockpos, i) ? i : 0;
+        BlockPos.MutableBlockPos mutablePos = new BlockPos.MutableBlockPos();
+        int i = this.getDistanceUntilTop(mutablePos);
+        return i >= 3 && i <= 21 && this.hasTopFrame(mutablePos, i) ? i : 0;
     }
 
-    private boolean hasTopFrame(BlockPos.MutableBlockPos pos, int distanceToTop) {
-        for (int i = 0; i < this.width; i++) {
-            BlockPos.MutableBlockPos blockpos$mutableblockpos = pos.set(this.bottomLeft).move(Direction.UP, distanceToTop).move(this.rightDir, i);
-            if (!FRAME.test(this.level.getBlockState(blockpos$mutableblockpos), this.level, blockpos$mutableblockpos)) {
+    private boolean hasTopFrame(BlockPos.MutableBlockPos mutablePos, int amount) {
+        for (int i = 0; i < this.width; ++i) {
+            assert this.bottomLeft != null;
+            BlockPos.MutableBlockPos movedPos = mutablePos.set(this.bottomLeft).move(Direction.UP, amount).move(this.rightDir, i);
+            if (!FRAME.test(this.level.getBlockState(movedPos), this.level, movedPos)) {
                 return false;
             }
         }
-
         return true;
     }
 
-    private int getDistanceUntilTop(BlockPos.MutableBlockPos pos) {
-        for (int i = 0; i < 21; i++) {
+    private int getDistanceUntilTop(BlockPos.MutableBlockPos mutablePos) {
+        for (int i = 0; i < 21; ++i) {
             assert this.bottomLeft != null;
-            pos.set(this.bottomLeft).move(Direction.UP, i).move(this.rightDir, -1);
-            if (!FRAME.test(this.level.getBlockState(pos), this.level, pos)) {
+            mutablePos.set(this.bottomLeft).move(Direction.UP, i).move(this.rightDir, -1);
+            if (!FRAME.test(this.level.getBlockState(mutablePos), this.level, mutablePos)) {
                 return i;
             }
 
-            pos.set(this.bottomLeft).move(Direction.UP, i).move(this.rightDir, this.width);
-            if (!FRAME.test(this.level.getBlockState(pos), this.level, pos)) {
+            mutablePos.set(this.bottomLeft).move(Direction.UP, i).move(this.rightDir, this.width);
+            if (!FRAME.test(this.level.getBlockState(mutablePos), this.level, mutablePos)) {
                 return i;
             }
 
-            for (int j = 0; j < this.width; j++) {
-                pos.set(this.bottomLeft).move(Direction.UP, i).move(this.rightDir, j);
-                BlockState blockstate = this.level.getBlockState(pos);
-                if (!isEmpty(blockstate)) {
+            for (int j = 0; j < this.width; ++j) {
+                mutablePos.set(this.bottomLeft).move(Direction.UP, i).move(this.rightDir, j);
+                BlockState blockState = this.level.getBlockState(mutablePos);
+                if (!isEmpty(blockState)) {
                     return i;
                 }
-
-                if (blockstate.is(ModBlocks.GHOSTLY_PORTAL_BLOCK.get())) {
-                    this.numPortalBlocks++;
+                if (blockState.is(ModBlocks.GHOSTLY_PORTAL_BLOCK.get())) {
+                    ++this.numPortalBlocks;
                 }
             }
         }
@@ -167,69 +142,35 @@ public class GhostlyPortalShape {
     }
 
     private static boolean isEmpty(BlockState state) {
-        return state.isAir() || state.is(BlockTags.FIRE) || state.is(ModBlocks.GHOSTLY_PORTAL_BLOCK);
+        return state.isAir() || state.is(Blocks.WATER) || state.is(ModBlocks.GHOSTLY_PORTAL_BLOCK.get());
     }
 
     public boolean isValid() {
-        LOGGER.info("[GhostlyPortalShape-isValid]: Validating portal shape at bottomLeft: " + this.bottomLeft + ", width: " + this.width + ", height: " + this.height);
         return this.bottomLeft != null && this.width >= 2 && this.width <= 21 && this.height >= 3 && this.height <= 21;
     }
 
     public void createPortalBlocks() {
-        LOGGER.info("GhostlyPortalShape createPortalBlocks Running");
-        BlockState blockstate = ModBlocks.GHOSTLY_PORTAL_BLOCK.get().defaultBlockState().setValue(GhostlyPortalBlock.AXIS, this.axis);
+        BlockState blockState = ModBlocks.GHOSTLY_PORTAL_BLOCK.get().defaultBlockState().setValue(NetherPortalBlock.AXIS, this.axis);
         assert this.bottomLeft != null;
-        BlockPos.betweenClosed(this.bottomLeft, this.bottomLeft.relative(Direction.UP, this.height - 1).relative(this.rightDir, this.width - 1))
-                .forEach(blockPos -> this.level.setBlock(blockPos, blockstate, 18));
-        LOGGER.info("GhostlyPortalShape createPortalBlocks Done");
+        BlockPos.betweenClosed(this.bottomLeft, this.bottomLeft.relative(Direction.UP, this.height - 1).relative(this.rightDir, this.width - 1)).forEach((pos) -> this.level.setBlock(pos, blockState, 2 | 16));
     }
 
     public boolean isComplete() {
         return this.isValid() && this.numPortalBlocks == this.width * this.height;
     }
 
-
-    public static Vec3 getRelativePosition(BlockUtil.FoundRectangle foundRectangle, Direction.Axis axis, Vec3 pos, EntityDimensions entityDimensions) {
-        double d0 = (double)foundRectangle.axis1Size - (double)entityDimensions.width();
-        double d1 = (double)foundRectangle.axis2Size - (double)entityDimensions.height();
-        BlockPos blockpos = foundRectangle.minCorner;
-        double d2;
-        if (d0 > 0.0) {
-            double d3 = (double)blockpos.get(axis) + (double)entityDimensions.width() / 2.0;
-            d2 = Mth.clamp(Mth.inverseLerp(pos.get(axis) - d3, 0.0, d0), 0.0, 1.0);
-        } else {
-            d2 = 0.5;
-        }
-
-        double d5;
-        if (d1 > 0.0) {
-            Direction.Axis direction$axis = Direction.Axis.Y;
-            d5 = Mth.clamp(Mth.inverseLerp(pos.get(direction$axis) - (double)blockpos.get(direction$axis), 0.0, d1), 0.0, 1.0);
-        } else {
-            d5 = 0.0;
-        }
-
-        Direction.Axis direction$axis1 = axis == Direction.Axis.X ? Direction.Axis.Z : Direction.Axis.X;
-        double d4 = pos.get(direction$axis1) - ((double)blockpos.get(direction$axis1) + 0.5);
-        return new Vec3(d2, d5, d4);
-    }
-
     public static Vec3 findCollisionFreePosition(Vec3 pos, ServerLevel level, Entity entity, EntityDimensions dimensions) {
         if (!(dimensions.width() > 4.0F) && !(dimensions.height() > 4.0F)) {
             double d0 = (double)dimensions.height() / 2.0;
             Vec3 vec3 = pos.add(0.0, d0, 0.0);
-            VoxelShape voxelshape = Shapes.create(
-                    AABB.ofSize(vec3, (double)dimensions.width(), 0.0, (double)dimensions.width()).expandTowards(0.0, 1.0, 0.0).inflate(1.0E-6)
-            );
-            Optional<Vec3> optional = level.findFreePosition(
-                    entity, voxelshape, vec3, (double)dimensions.width(), (double)dimensions.height(), (double)dimensions.width()
-            );
-            Optional<Vec3> optional1 = optional.map(p_259019_ -> p_259019_.subtract(0.0, d0, 0.0));
-            return optional1.orElse(pos);
+            VoxelShape voxelshape = Shapes.create(AABB.ofSize(vec3, (double)dimensions.width(), 0.0, (double)dimensions.width()).expandTowards(0.0, 1.0, 0.0).inflate(1.0E-6));
+            Optional<Vec3> optional = level.findFreePosition(entity, voxelshape, vec3, (double)dimensions.width(), (double)dimensions.height(), (double)dimensions.width());
+            Optional<Vec3> optional1 = optional.map((p_259019_) -> {
+                return p_259019_.subtract(0.0, d0, 0.0);
+            });
+            return (Vec3)optional1.orElse(pos);
         } else {
             return pos;
         }
     }
-
-
 }

@@ -38,7 +38,7 @@ public class BoneBrick extends Block {
         // Check if the item in hand is flint and steel
         if (stack.getItem() == Items.FLINT_AND_STEEL) {
             Direction.Axis axis = Direction.Axis.X; // Set the appropriate axis
-            Optional<GhostlyPortalShape> portalShape = GhostlyPortalShape.findPortalShape(level, pos, GhostlyPortalShape::isValid, axis);
+            Optional<GhostlyPortalShape> portalShape = GhostlyPortalShape.findEmptyPortalShape(level, pos, axis);
 
             if (portalShape.isPresent()) {
                 LOGGER.info("Portal shape found, creating portal blocks.");

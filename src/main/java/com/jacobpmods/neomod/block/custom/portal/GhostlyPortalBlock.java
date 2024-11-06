@@ -1,5 +1,6 @@
 package com.jacobpmods.neomod.block.custom.portal;
 
+import com.jacobpmods.neomod.block.ModBlocks;
 import com.jacobpmods.neomod.block.custom.portal.setup.GhostlyPortalForcer;
 import com.jacobpmods.neomod.block.custom.portal.setup.GhostlyPortalShape;
 import com.jacobpmods.neomod.entity.ModEntities;
@@ -155,13 +156,16 @@ public class GhostlyPortalBlock extends Block implements Portal {
         if (optional.isPresent()) {
             BlockPos blockpos = optional.get();
             BlockState blockstate = level.getBlockState(blockpos);
+            BlockState boneBlockState = ModBlocks.BONE_BRICK.get().defaultBlockState();
+
+            // Calculate the largest rectangle around the found position
             blockutil$foundrectangle = BlockUtil.getLargestRectangleAround(
                     blockpos,
-                    blockstate.getValue(BlockStateProperties.HORIZONTAL_AXIS),
-                    21,
-                    Direction.Axis.Y,
-                    21,
-                    p_351970_ -> level.getBlockState(p_351970_) == blockstate
+                    boneBlockState.getValue(BlockStateProperties.HORIZONTAL_AXIS), // Ensure BONE_BLOCK has this property
+                    21, // Max width
+                    Direction.Axis.Y, // Axis along which the rectangle is extended vertically
+                    21, // Max height
+                    p_351970_ -> level.getBlockState(p_351970_).is(boneBlockState.getBlock()) // Check if the block matches BONE_BLOCK
             );
             dimensiontransition$postdimensiontransition = DimensionTransition.PLAY_PORTAL_SOUND.then(p_351967_ -> p_351967_.placePortalTicket(blockpos));
         } else {
@@ -217,8 +221,8 @@ public class GhostlyPortalBlock extends Block implements Portal {
         BlockPos blockpos = rectangle.minCorner;
         BlockState blockstate = level.getBlockState(blockpos);
         Direction.Axis direction$axis = blockstate.getOptionalValue(BlockStateProperties.HORIZONTAL_AXIS).orElse(Direction.Axis.X);
-        double d0 = (double)rectangle.axis1Size;
-        double d1 = (double)rectangle.axis2Size;
+        double d0 = rectangle.axis1Size;
+        double d1 = rectangle.axis2Size;
         EntityDimensions entitydimensions = entity.getDimensions(entity.getPose());
         int i = axis == direction$axis ? 0 : 90;
         Vec3 vec3 = axis == direction$axis ? speed : new Vec3(speed.z, speed.y, -speed.x);
@@ -227,7 +231,7 @@ public class GhostlyPortalBlock extends Block implements Portal {
         double d4 = 0.5 + offset.z();
         boolean flag = direction$axis == Direction.Axis.X;
         Vec3 vec31 = new Vec3((double)blockpos.getX() + (flag ? d2 : d4), (double)blockpos.getY() + d3, (double)blockpos.getZ() + (flag ? d4 : d2));
-        Vec3 vec32 = PortalShape.findCollisionFreePosition(vec31, level, entity, entitydimensions);
+        Vec3 vec32 = GhostlyPortalShape.findCollisionFreePosition(vec31, level, entity, entitydimensions);
         return new DimensionTransition(level, vec32, vec3, yRot + (float)i, xRot, postDimensionTransition);
     }
 

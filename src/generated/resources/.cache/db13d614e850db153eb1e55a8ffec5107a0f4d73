@@ -1,4 +1,4 @@
-// 1.21.1	2024-10-12T04:43:28.8238877	Tags for minecraft:block mod id neomod
+// 1.21.1	2024-11-05T16:39:11.5179717	Tags for minecraft:block mod id neomod
 f5fbb319f25c4056dadc32c54493627182dc4ab6 data/minecraft/tags/block/dirt.json
 cdc899dde00cb15e2170f0a866271497533205a6 data/minecraft/tags/block/incorrect_for_diamond_tool.json
 cdc899dde00cb15e2170f0a866271497533205a6 data/minecraft/tags/block/incorrect_for_gold_tool.json
@@ -8,5 +8,6 @@ cdc899dde00cb15e2170f0a866271497533205a6 data/minecraft/tags/block/incorrect_for
 0ed1e79a3a2ca37f37837dc91f22d476755752ba data/minecraft/tags/block/logs_that_burn.json
 5e76e30ffbbb576b7b46fdc1493ade7c6ade4270 data/minecraft/tags/block/mineable/axe.json
 1ba3ab1c8722ba6cf49452845bde3a2a856968fd data/minecraft/tags/block/mineable/pickaxe.json
+ac3c884022f5a161f793d2a7f9d814466ec169b4 data/minecraft/tags/block/portals.json
 0c1f9c1ea432787bc7f25694d692ecfaffa1cdac data/neoforge/tags/block/needs_netherite_tool.json
 2caee6fbacae166e2b2ee470fe31675dde7d82cc data/neomod/tags/block/needs_nexon_tool.json

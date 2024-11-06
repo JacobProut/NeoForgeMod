@@ -17,6 +17,8 @@ public class ModTags {
         public static final TagKey<Block> NEEDS_NEXON_TOOL = createTag("needs_nexon_tool");
         public static final TagKey<Block> INCORRECT_FOR_NEXON_TOOL = createTag("incorrect_for_netherite_tool");
 
+        public static final TagKey<Block> GHOSTLY_PORTAL_BLOCKS = createTag("ghostly_portal_blocks");
+
         private static TagKey<Block> createTag(String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(FirstNeoMod.MOD_ID, name));
         }

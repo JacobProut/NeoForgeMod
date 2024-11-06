@@ -1,9 +1,6 @@
 package com.jacobpmods.neomod.block;
 
-import com.jacobpmods.neomod.block.custom.GhostlyPortalBlock;
-import com.jacobpmods.neomod.block.custom.ModFlammableRotatedPillarBlock;
-import com.jacobpmods.neomod.block.custom.ModSaplingBlock;
-import com.jacobpmods.neomod.block.custom.PedestalBlock;
+import com.jacobpmods.neomod.block.custom.*;
 import com.jacobpmods.neomod.FirstNeoMod;
 import com.jacobpmods.neomod.item.ModItems;
 import com.jacobpmods.neomod.block.terrainblocks.GhostlyBlock;
@@ -110,7 +107,7 @@ public class ModBlocks {
             .strength(7f).destroyTime(100000).noOcclusion().sound(SoundType.GLASS)));
 
     public static final DeferredBlock<Block> OOZING_FLOWER = registerBlock("oozing_flower",
-            () -> new FlowerBlock(MobEffects.HARM, 2, BlockBehaviour.Properties.ofFullCopy(Blocks.ALLIUM)));
+            () -> new ModFlowerBlock(MobEffects.HARM, 2, BlockBehaviour.Properties.ofFullCopy(Blocks.ALLIUM)));
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {

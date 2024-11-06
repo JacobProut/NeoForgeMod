@@ -17,6 +17,7 @@ public class ModSurfaceRules {
     private static final SurfaceRules.RuleSource MOD_STONE_BLOCK = makeStateRule(ModBlocks.GHOSTLY_STONE.get());
     private static final SurfaceRules.RuleSource BEDROCK = makeStateRule(Blocks.BEDROCK);
 
+    private static final SurfaceRules.RuleSource OOZING_FLOWER = makeStateRule(ModBlocks.OOZING_FLOWER.get()); // Define the rule for the flower
 
     public static SurfaceRules.RuleSource makeRules() {
         SurfaceRules.ConditionSource isAtOrAboveWaterlevel = SurfaceRules.waterBlockCheck(-1, 0);
@@ -24,20 +25,38 @@ public class ModSurfaceRules {
                 SurfaceRules.isBiome(ModBiomes.GHOSTLY_BIOME), SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, MOD_GRASS_BLOCK)
         );
 
+        SurfaceRules.RuleSource flowerRule = SurfaceRules.ifTrue(
+                SurfaceRules.isBiome(ModBiomes.GHOSTLY_BIOME),
+                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, OOZING_FLOWER)
+        );
+
+
         SurfaceRules.RuleSource grassSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterlevel, SurfaceRules.sequence(
                 myRules,
-                MOD_GRASS_BLOCK
+                MOD_GRASS_BLOCK,
+                flowerRule
         )),MOD_DIRT);
 
 
+        // Combined rules for the GHOSTLY_BIOME
         SurfaceRules.RuleSource modBiomeRules = SurfaceRules.sequence(
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.GHOSTLY_BIOME),
+                        SurfaceRules.sequence(
+                                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface),
+                                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, MOD_DIRT),
+                                MOD_STONE_BLOCK
+                        )
+                )
+        );
+
+      /*  SurfaceRules.RuleSource modBiomeRules = SurfaceRules.sequence(
                 SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.GHOSTLY_BIOME),
-                                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.sequence(grassSurface,myRules))),
+                                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.sequence(grassSurface, myRules, flowerRule))),
                         SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, MOD_DIRT),
                         SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.GHOSTLY_BIOME), MOD_STONE_BLOCK)
                 ),
                 grassSurface
-        );
+        );*/
 
         ImmutableList.Builder<SurfaceRules.RuleSource> builder = ImmutableList.builder();
 

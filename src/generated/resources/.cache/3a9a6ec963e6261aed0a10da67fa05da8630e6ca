@@ -1,4 +1,4 @@
-// 1.21.1	2024-10-16T01:21:04.735242	Block States: neomod
+// 1.21.1	2024-11-05T22:43:45.4305076	Block States: neomod
 8de1f0006f8c2e13875e1dbbfa8e1c8fa9849129 assets/neomod/blockstates/ghostly_dirt.json
 bc873194310b166f995eb341b1ff2b9bc5b0630d assets/neomod/blockstates/ghostly_grass_block.json
 1523c4ffec60e28c7c808031cf5a9ceae5e9e3d4 assets/neomod/blockstates/ghostly_leaves.json
@@ -8,6 +8,7 @@ bc873194310b166f995eb341b1ff2b9bc5b0630d assets/neomod/blockstates/ghostly_grass
 d84822744b0de810b197cd89759fae9a47cdb1b6 assets/neomod/blockstates/log_ghostly.json
 2f48aea5100ac63721989351687a92b91482877d assets/neomod/blockstates/nexon_block.json
 d34b5c989753a8bdac2e670369b909a0bb60eb02 assets/neomod/blockstates/nexon_ore_block.json
+ca9e6a7cfc1afc9828f752c54cdd389cd9291f2d assets/neomod/blockstates/oozing_flower.json
 f95ceec255f9672ca3ff59024e16075f454b5abe assets/neomod/blockstates/planks_ghostly.json
 d34a28ffc8f91fe8ac55d802eed4a80360966588 assets/neomod/blockstates/stripped_ghostly_log.json
 5e49d5955eba7c51b83841b24a39c22131b3b91d assets/neomod/blockstates/stripped_ghostly_wood.json
@@ -22,6 +23,7 @@ c81bae0ff7e538514c778eea74ea5777fa05fc06 assets/neomod/models/block/log_ghostly.
 1fa7bf1ded3f8f98e6519a3946bc54fc1c5b31aa assets/neomod/models/block/log_ghostly_horizontal.json
 4d2a35e4ed5e10c2c7f058937492ebcbdbe8f05b assets/neomod/models/block/nexon_block.json
 16d87e0b2aaadd1a979075459257a99e23d58e3d assets/neomod/models/block/nexon_ore_block.json
+f6bb19a45f653522328e4e35b4fbedb2bb4875e9 assets/neomod/models/block/oozing_flower.json
 fbb05c9253b2f7b0bb5716f8da27133d503a3e6f assets/neomod/models/block/planks_ghostly.json
 65b0f44713d96ebdeec4e4237f1e6a4858cc5869 assets/neomod/models/block/stripped_ghostly_log.json
 ce02d3c52ea9f2d8b3f9c29ad6d1f1a71c6be4a3 assets/neomod/models/block/stripped_ghostly_log_horizontal.json

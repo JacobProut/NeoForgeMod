@@ -64,6 +64,9 @@ public class ModCreativeModeTabs {
                         //Portals
                         output.accept(ModBlocks.GHOSTLY_PORTAL_BLOCK.get());
 
+                        //Flowers
+                        output.accept(ModBlocks.OOZING_FLOWER.get());
+
                     }).build());
 
 

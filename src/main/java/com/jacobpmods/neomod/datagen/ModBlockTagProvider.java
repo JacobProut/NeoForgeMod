@@ -70,6 +70,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.STRIPPED_GHOSTLY_LOG.get())
                 .add(ModBlocks.STRIPPED_GHOSTLY_WOOD.get());
 
+        tag(FLOWERS)
+                .add(ModBlocks.OOZING_FLOWER.get());
+
 
     }
 }

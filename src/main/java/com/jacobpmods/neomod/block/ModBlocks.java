@@ -11,6 +11,8 @@ import com.jacobpmods.neomod.block.terrainblocks.GhostlyDirtBlock;
 import com.jacobpmods.neomod.worldgen.tree.ModTreeGrowers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
@@ -106,6 +108,11 @@ public class ModBlocks {
 
     public static final DeferredBlock<GhostlyPortalBlock> GHOSTLY_PORTAL_BLOCK = registerBlock("ghostly_portal_block", () ->new GhostlyPortalBlock(BlockBehaviour.Properties.of()
             .strength(7f).destroyTime(100000).noOcclusion().sound(SoundType.GLASS)));
+
+    public static final DeferredBlock<Block> OOZING_FLOWER = registerBlock("oozing_flower",
+            () -> new FlowerBlock(MobEffects.HARM, 2, BlockBehaviour.Properties.ofFullCopy(Blocks.ALLIUM)));
+
+
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);

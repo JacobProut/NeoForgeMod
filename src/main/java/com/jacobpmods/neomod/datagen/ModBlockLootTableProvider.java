@@ -38,6 +38,7 @@ public class ModBlockLootTableProvider  extends BlockLootSubProvider {
         dropSelf(ModBlocks.PEDESTAL.get());
         dropSelf(ModBlocks.GHOSTLY_PORTAL_BLOCK.get());
 
+
         this.add(ModBlocks.NEXON_ORE_BLOCK.get(),
                 block -> createMultipleOreDrops(ModBlocks.NEXON_ORE_BLOCK.get(), ModItems.nexon.get(), 1, 2));
 
@@ -47,6 +48,7 @@ public class ModBlockLootTableProvider  extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.STRIPPED_GHOSTLY_WOOD.get());
         this.dropSelf(ModBlocks.PLANKS_GHOSTLY.get());
         this.dropSelf(ModBlocks.GHOSTLY_SAPLING.get());
+        this.dropSelf(ModBlocks.OOZING_FLOWER.get());
 
         this.add(ModBlocks.GHOSTLY_LEAVES.get(), block ->
                 createLeavesDrops(block, ModBlocks.GHOSTLY_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));

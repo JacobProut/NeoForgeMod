@@ -36,9 +36,10 @@ public class BoneBrick extends Block {
         LOGGER.info("Player is using item on Block at position: " + pos.toString());
 
         // Check if the item in hand is flint and steel
-        if (stack.getItem() == Items.FLINT_AND_STEEL) {
+    /*    if (stack.getItem() == Items.FLINT_AND_STEEL) {
             Direction.Axis axis = Direction.Axis.X; // Set the appropriate axis
-            Optional<GhostlyPortalShape> portalShape = GhostlyPortalShape.findEmptyPortalShape(level, pos, axis);
+
+            Optional<GhostlyPortalShape> portalShape = GhostlyPortalShape.findCollisionFreePosition(level, pos, axis);
 
             if (portalShape.isPresent()) {
                 LOGGER.info("Portal shape found, creating portal blocks.");
@@ -53,7 +54,7 @@ public class BoneBrick extends Block {
 
             LOGGER.info("End of useItemOn method");
             return ItemInteractionResult.SUCCESS; // Indicate that the interaction was successful
-        }
+        }*/
 
         LOGGER.info("Item used is not flint and steel.");
         return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION; // Default behavior
